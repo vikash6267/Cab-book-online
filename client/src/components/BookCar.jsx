@@ -5,6 +5,7 @@ import { IconCalendarEvent } from "@tabler/icons-react";
 import { IconUser } from "@tabler/icons-react";
 import { IconPhone } from "@tabler/icons-react";
 import axios from "axios"
+import Swal from "sweetalert2";
 
 function BookCar() {
   // booking car
@@ -106,7 +107,7 @@ const[contact,setContact] = useState("")
 
   const submitData = async(e) =>{
     e.preventDefault()
-    console.log("hello")
+    // console.log("hello")
     await calculateDistance()
 
     let formData = new FormData()
@@ -120,11 +121,79 @@ const[contact,setContact] = useState("")
     formData.append("contact",contact)
     formData.append("distance",totalDistance)
 
-    console.log(formData)
+    // console.log(formData)
 
-    const res = await axios.post( "http://localhost:8080/api/v1/user/booking", formData)
+    // Swal.fire({
+    //   title: 'Loading',
+    //   allowOutsideClick: false,
+    //   allowEscapeKey: false,
+    //   allowEnterKey: false,
+    //   showConfirmButton: false,
+    //   html: '<div class="spinner-border" role="status"><span class="sr-only">Loading...</span></div>'
+    // });
+    
+    // const res = await axios.post( "http://localhost:8080/api/v1/user/booking", formData)
 
-    console.log(res)
+   
+    // if(res?.data?.success){
+    //   Swal.fire({
+    //     title: `Thankyou ${name} For Booking `,
+    //     text: `Any Futher Information Contact - 6267144122`,
+    //     icon: "success",
+    //   });
+    // }
+
+
+
+// Show loading toast
+Swal.fire({
+  title: 'Loading',
+  allowOutsideClick: false,
+  allowEscapeKey: false,
+  allowEnterKey: false,
+  showConfirmButton: false,
+  html: '<div class="spinner-border" role="status"><span class="sr-only">Loading...</span></div>'
+});
+
+try {
+  // Make the POST request
+  const res = await axios.post("http://localhost:8080/api/v1/user/booking", formData);
+
+  // Check if response is successful
+  if (res?.data?.success) {
+    // Close loading toast
+    Swal.close();
+
+    // Show success toast
+    Swal.fire({
+          title: `Thankyou ${name} For Booking `,
+          text: `Any Futher Information Contact - 6267144122`,
+          icon: "success",
+        });
+  } else {
+    // Close loading toast
+    Swal.close();
+
+    // Show error toast
+    Swal.fire({
+      icon: 'error',
+      title: 'Error',
+      text: 'Booking failed. Please try again later.'
+    });
+  }
+} catch (error) {
+  // Close loading toast
+  Swal.close();
+
+  // Show error toast if request fails
+  Swal.fire({
+    icon: 'error',
+    title: 'Error',
+    text: 'An error occurred while processing your request. Please try again later.'
+  });
+}
+
+
 
   }
 

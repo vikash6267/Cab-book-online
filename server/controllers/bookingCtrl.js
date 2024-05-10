@@ -12,7 +12,8 @@ const bookingCtrl = async (req, res) => {
         )
         res.status(200).send({
             message: "Email send successfully.Our team will contact you soon!",
-            emailRes
+            emailRes,
+            success:true
         })
     } catch (error) {
         console.log(error)
