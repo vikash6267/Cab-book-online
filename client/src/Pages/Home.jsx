@@ -20,9 +20,9 @@ function Home() {
       <PickCar />
       <Banner />
       <ChooseUs />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <Faq />
-      <Download />
+      {/* <Download /> */}
       <Footer />
     </>
   );
