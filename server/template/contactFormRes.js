@@ -86,7 +86,7 @@ const contactUsEmail = (
     <body>
         <div class="container">
             <a href="http://localhost:5173"><img class="logo"
-                    src="https://i.ibb.co/yVxsTbM/pngwing-com-3.png" alt="Car Book"></a>
+                    src="https://i.ibb.co/kQ5vsnc/logo.jpg" alt="Car Book"></a>
             <div class="message">New Booking Confirmation</div>
             <div class="body">
                 <p>Dear <span class="highlight">Admin</span>,</p>

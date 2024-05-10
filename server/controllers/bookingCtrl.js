@@ -6,14 +6,14 @@ const bookingCtrl = async (req, res) => {
 
     try {
         const emailRes = await mailSender(
-            "vikasmaheshwari6267@gmail.com",
+            "anshacabservice@gmail.com",
             "Your Data send successfully",
             contactUsEmail(name, carType, to, from, pickupDate, dropDate, distance, contact)
         )
         res.status(200).send({
             message: "Email send successfully.Our team will contact you soon!",
             emailRes,
-            success:true
+            success: true
         })
     } catch (error) {
         console.log(error)
