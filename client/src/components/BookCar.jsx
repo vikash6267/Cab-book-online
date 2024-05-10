@@ -4,7 +4,7 @@ import { IconMapPinFilled } from "@tabler/icons-react";
 import { IconCalendarEvent } from "@tabler/icons-react";
 import { IconUser } from "@tabler/icons-react";
 import { IconPhone } from "@tabler/icons-react";
-
+import axios from "axios"
 
 function BookCar() {
   // booking car
@@ -82,9 +82,32 @@ const[contact,setContact] = useState("")
     doneMsg.style.display = "none";
   };
 
-  const submitData =(e) =>{
+  const calculateDistance = () => {
+    const origin = fromValue;
+    const destination = toValue;
+    const service = new window.google.maps.DistanceMatrixService();
+    service.getDistanceMatrix({
+      origins: [origin],
+      destinations: [destination],
+      travelMode: 'DRIVING',
+      unitSystem: window.google.maps.UnitSystem.METRIC,
+      avoidHighways: false,
+      avoidTolls: false
+    }, (response, status) => {
+      if (status === 'OK') {
+        const distance = response.rows[0].elements[0].distance.text;
+        setTotalDistance(distance);
+      } else {
+        setTotalDistance('Error calculating distance');
+      }
+    });
+  };
+
+
+  const submitData = async(e) =>{
     e.preventDefault()
     console.log("hello")
+    await calculateDistance()
 
     let formData = new FormData()
 
@@ -99,6 +122,9 @@ const[contact,setContact] = useState("")
 
     console.log(formData)
 
+    const res = await axios.post( "http://localhost:8080/api/v1/user/booking", formData)
+
+    console.log(res)
 
   }
 
