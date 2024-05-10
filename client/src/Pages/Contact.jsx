@@ -38,7 +38,7 @@ function Contact() {
     try {
       // Make the POST request
       const res = await axios.post(
-        "http://localhost:8080/api/v1/user/contact",
+        "https://cab-book-online.onrender.com/api/v1/user/contact",
         formData
       );
 
@@ -46,7 +46,7 @@ function Contact() {
         Swal.fire({
           icon: "success",
           title: `Thank you ${name} for contacting us!`,
-          text: "For further information, please contact: 6267144122",
+          text: "For further information, please contact: 073511 83413",
         });
       } else {
         Swal.fire({
@@ -71,25 +71,26 @@ function Contact() {
         <HeroPages name="Contact" />
         <div className="container">
           <div className="contact-div">
-            <div className="contact-div__text">
+            <div className="contact-div__text flex col">
               <h2>Need additional information?</h2>
               <p>
                 A multifaceted professional skilled in multiple fields of
                 research, development, as well as a learning specialist. Over 15
                 years of experience.
               </p>
-              <a href="tel:+1234567869">
-                <IconPhone /> &nbsp; (123) 456-7869
+              <a href="tel:+91073511 83413" className="flex">
+                <IconPhone /> &nbsp; 073511 83413
+
               </a>
-              <a href="mailto:carrental@carmail.com">
-                <IconMail /> &nbsp; carrental@carmail.com
+              <a href="mailto:anshacabservice@gmail.com" className="flex">
+                <IconMail /> &nbsp; anshacabservice@gmail.com
               </a>
-              <p>
+              <p className="flex"> 
                 <IconLocation />
-                &nbsp; Belgrade, Serbia
+                &nbsp; Dehradun Utrakhand
               </p>
             </div>
-            <div className="contact-div__form">
+            {/* <div className="contact-div__form">
               <a href="/" className="flex">
                 <IconPhone /> &nbsp; +9173511 83413
               </a>
@@ -100,7 +101,7 @@ function Contact() {
                 <IconLocation />
                 &nbsp; Dehradun, Utrakhand
               </a>
-            </div>
+            </div> */}
             <div className="contact-div__form ">
               <form onSubmit={submitData}>
                 <label>

@@ -1,14 +1,10 @@
+import { Link } from "react-router-dom";
+import { IconCar, IconUsers, IconStar, IconPhone } from "@tabler/icons-react";
 import Footer from "../components/Footer";
 import HeroPages from "../components/HeroPages";
-import CarImg1 from "../images/cars-big/audi-box.png";
-import CarImg2 from "../images/cars-big/golf6-box.png";
-import CarImg3 from "../images/cars-big/toyota-box.png";
-import CarImg4 from "../images/cars-big/bmw-box.png";
-import CarImg5 from "../images/cars-big/benz-box.png";
-import CarImg6 from "../images/cars-big/passat-box.png";
-import { Link } from "react-router-dom";
-import { IconCar, IconPhone, IconStar } from "@tabler/icons-react";
 import Navbar from "../components/Navbar";
+import { CAR_DATA } from "../components/CarData";
+import { IconCurrencyRupee } from "@tabler/icons-react";
 
 function Models() {
   return (
@@ -17,264 +13,49 @@ function Models() {
       <section className="models-section">
         <HeroPages name="Vehicle Models" />
         <div className="container">
-          <div className="models-div">
-            <div className="models-div__box">
-              <div className="models-div__box__img">
-                <img src={CarImg1} alt="car_img" />
-                <div className="models-div__box__descr">
-                  <div className="models-div__box__descr__name-price">
-                    <div className="models-div__box__descr__name-price__name">
-                      <p>Audi A1</p>
-                      <span>
-                        <IconStar width={15} height={15} />
-                        <IconStar width={15} height={15} />
-                        <IconStar width={15} height={15} />
-                        <IconStar width={15} height={15} />
-                        <IconStar width={15} height={15} />
+          <div className="models-div grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {CAR_DATA.map((car, index) => (
+              <div key={index} className="models-div__box shadow-md">
+                <div className="models-div__box__img">
+                  <img src={car.img} alt={car.name} />
+                  <div className="models-div__box__descr">
+                    <div className="models-div__box__descr__name-price">
+                      <div className="models-div__box__descr__name-price__name">
+                        <p>{car.name}</p>
+                        {/* <span>
+                          {[1, 2, 3, 4, 5].map((star) => (
+                            <IconStar key={star} width={15} height={15} />
+                          ))}
+                        </span> */}
+                      </div>
+                      <div className="models-div__box__descr__name-price__price">
+                        <h4 className="flex items-center gap-1">   <IconCurrencyRupee className="text-3xl" />  {car.price ? `${car.price}` : "Contact for Price"}</h4>
+                        <p>per day</p>
+                      </div>
+                    </div>
+                    <div className="models-div__box__descr__name-price__details">
+                      <span className="flex ">
+                        <IconCar /> &nbsp; {car.model}
+                      </span>
+                      <span style={{ textAlign: "right" }} className="flex ">
+                        {car.doors} Doors &nbsp; <IconCar />
+                      </span>
+                      <span className="flex ">
+                        <IconUsers /> &nbsp; {car.seats} Seats
+                      </span>
+                      <span style={{ textAlign: "right" }} className="flex ">
+                        {car.transmission} &nbsp; <IconCar />
                       </span>
                     </div>
-                    <div className="models-div__box__descr__name-price__price">
-                      <h4>$45</h4>
-                      <p>per day</p>
+                    <div className="models-div__box__descr__name-price__btn">
+                      <Link onClick={() => window.scrollTo(0, 0)} to="/">
+                        Book Ride
+                      </Link>
                     </div>
-                  </div>
-                  <div className="models-div__box__descr__name-price__details">
-                    <span>
-                      <IconCar /> &nbsp; Audi
-                    </span>
-                    <span style={{ textAlign: "right" }}>
-                      4/5 &nbsp; <IconCar />
-                    </span>
-                    <span>
-                      <IconCar /> &nbsp; Manual
-                    </span>
-                    <span style={{ textAlign: "right" }}>
-                      Diesel &nbsp; <IconCar />
-                    </span>
-                  </div>
-                  <div className="models-div__box__descr__name-price__btn">
-                    <Link onClick={() => window.scrollTo(0, 0)} to="/">
-                      Book Ride
-                    </Link>
                   </div>
                 </div>
               </div>
-            </div>
-
-            <div className="models-div__box">
-              <div className="models-div__box__img">
-                <img src={CarImg2} alt="car_img" />
-                <div className="models-div__box__descr">
-                  <div className="models-div__box__descr__name-price">
-                    <div className="models-div__box__descr__name-price__name">
-                      <p>Golf 6</p>
-                      <span>
-                        <IconStar width={15} height={15} />
-                        <IconStar width={15} height={15} />
-                        <IconStar width={15} height={15} />
-                        <IconStar width={15} height={15} />
-                        <IconStar width={15} height={15} />
-                      </span>
-                    </div>
-                    <div className="models-div__box__descr__name-price__price">
-                      <h4>$37</h4>
-                      <p>per day</p>
-                    </div>
-                  </div>
-                  <div className="models-div__box__descr__name-price__details">
-                    <span>
-                      <IconCar /> &nbsp; VW
-                    </span>
-                    <span style={{ textAlign: "right" }}>
-                      4/5 &nbsp; <IconCar />
-                    </span>
-                    <span>
-                      <IconCar /> &nbsp; Manual
-                    </span>
-                    <span style={{ textAlign: "right" }}>
-                      Diesel &nbsp; <IconCar />
-                    </span>
-                  </div>
-                  <div className="models-div__box__descr__name-price__btn">
-                    <Link onClick={() => window.scrollTo(0, 0)} to="/">
-                      Book Ride
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="models-div__box">
-              <div className="models-div__box__img">
-                <img src={CarImg3} alt="car_img" />
-                <div className="models-div__box__descr">
-                  <div className="models-div__box__descr__name-price">
-                    <div className="models-div__box__descr__name-price__name">
-                      <p>Toyota</p>
-                      <span>
-                        <IconStar width={15} height={15} />
-                        <IconStar width={15} height={15} />
-                        <IconStar width={15} height={15} />
-                        <IconStar width={15} height={15} />
-                        <IconStar width={15} height={15} />
-                      </span>
-                    </div>
-                    <div className="models-div__box__descr__name-price__price">
-                      <h4>$30</h4>
-                      <p>per day</p>
-                    </div>
-                  </div>
-                  <div className="models-div__box__descr__name-price__details">
-                    <span>
-                      <IconCar /> &nbsp; Camry
-                    </span>
-                    <span style={{ textAlign: "right" }}>
-                      4/5 &nbsp; <IconCar />
-                    </span>
-                    <span>
-                      <IconCar /> &nbsp; Manual
-                    </span>
-                    <span style={{ textAlign: "right" }}>
-                      Diesel &nbsp; <IconCar />
-                    </span>
-                  </div>
-                  <div className="models-div__box__descr__name-price__btn">
-                    <Link onClick={() => window.scrollTo(0, 0)} to="/">
-                      Book Ride
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="models-div__box">
-              <div className="models-div__box__img">
-                <img src={CarImg4} alt="car_img" />
-                <div className="models-div__box__descr">
-                  <div className="models-div__box__descr__name-price">
-                    <div className="models-div__box__descr__name-price__name">
-                      <p>BMW 320</p>
-                      <span>
-                        <IconStar width={15} height={15} />
-                        <IconStar width={15} height={15} />
-                        <IconStar width={15} height={15} />
-                        <IconStar width={15} height={15} />
-                        <IconStar width={15} height={15} />
-                      </span>
-                    </div>
-                    <div className="models-div__box__descr__name-price__price">
-                      <h4>$35</h4>
-                      <p>per day</p>
-                    </div>
-                  </div>
-                  <div className="models-div__box__descr__name-price__details">
-                    <span>
-                      <IconCar /> &nbsp; ModernLine
-                    </span>
-                    <span style={{ textAlign: "right" }}>
-                      4/5 &nbsp; <IconCar />
-                    </span>
-                    <span>
-                      <IconCar /> &nbsp; Manual
-                    </span>
-                    <span style={{ textAlign: "right" }}>
-                      Diesel &nbsp; <IconCar />
-                    </span>
-                  </div>
-                  <div className="models-div__box__descr__name-price__btn">
-                    <Link onClick={() => window.scrollTo(0, 0)} to="/">
-                      Book Ride
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="models-div__box">
-              <div className="models-div__box__img">
-                <img src={CarImg5} alt="car_img" />
-                <div className="models-div__box__descr">
-                  <div className="models-div__box__descr__name-price">
-                    <div className="models-div__box__descr__name-price__name">
-                      <p>Mercedes</p>
-                      <span>
-                        <IconStar width={15} height={15} />
-                        <IconStar width={15} height={15} />
-                        <IconStar width={15} height={15} />
-                        <IconStar width={15} height={15} />
-                        <IconStar width={15} height={15} />
-                      </span>
-                    </div>
-                    <div className="models-div__box__descr__name-price__price">
-                      <h4>$50</h4>
-                      <p>per day</p>
-                    </div>
-                  </div>
-                  <div className="models-div__box__descr__name-price__details">
-                    <span>
-                      <IconCar /> &nbsp; Benz GLK
-                    </span>
-                    <span style={{ textAlign: "right" }}>
-                      4/5 &nbsp; <IconCar />
-                    </span>
-                    <span>
-                      <IconCar /> &nbsp; Manual
-                    </span>
-                    <span style={{ textAlign: "right" }}>
-                      Diesel &nbsp; <IconCar />
-                    </span>
-                  </div>
-                  <div className="models-div__box__descr__name-price__btn">
-                    <Link onClick={() => window.scrollTo(0, 0)} to="/">
-                      Book Ride
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="models-div__box">
-              <div className="models-div__box__img">
-                <img src={CarImg6} alt="car_img" />
-                <div className="models-div__box__descr">
-                  <div className="models-div__box__descr__name-price">
-                    <div className="models-div__box__descr__name-price__name">
-                      <p>VW Passat</p>
-                      <span>
-                        <IconStar width={15} height={15} />
-                        <IconStar width={15} height={15} />
-                        <IconStar width={15} height={15} />
-                        <IconStar width={15} height={15} />
-                        <IconStar width={15} height={15} />
-                      </span>
-                    </div>
-                    <div className="models-div__box__descr__name-price__price">
-                      <h4>$25</h4>
-                      <p>per day</p>
-                    </div>
-                  </div>
-                  <div className="models-div__box__descr__name-price__details">
-                    <span>
-                      <IconCar /> &nbsp; CC
-                    </span>
-                    <span style={{ textAlign: "right" }}>
-                      4/5 &nbsp; <IconCar />
-                    </span>
-                    <span>
-                      <IconCar /> &nbsp; Manual
-                    </span>
-                    <span style={{ textAlign: "right" }}>
-                      Diesel &nbsp; <IconCar />
-                    </span>
-                  </div>
-                  <div className="models-div__box__descr__name-price__btn">
-                    <Link onClick={() => window.scrollTo(0, 0)} to="/">
-                      Book Ride
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
         <div className="book-banner">
@@ -284,7 +65,7 @@ function Models() {
               <h2>Book a car by getting in touch with us</h2>
               <span>
                 <IconPhone width={40} height={40} />
-                <h3>(123) 456-7869</h3>
+                <h3>+91 073511 83413</h3>
               </span>
             </div>
           </div>

@@ -6,6 +6,8 @@ import { IconUser } from "@tabler/icons-react";
 import { IconPhone } from "@tabler/icons-react";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { CAR_DATA } from "./CarData";
+import { distance } from "framer-motion";
 
 function BookCar() {
   // booking car
@@ -87,21 +89,27 @@ function BookCar() {
         avoidTolls: false,
       },
       (response, status) => {
+        console.log("Response:", response);
+        console.log("Status:", status);
         if (status === "OK") {
           const distance = response.rows[0].elements[0].distance.text;
+          console.log("Distance:", distance);
           setTotalDistance(distance);
         } else {
+          console.error("Error calculating distance:", status);
           setTotalDistance("Error calculating distance");
         }
       }
     );
   };
+  
 
   const submitData = async (e) => {
     e.preventDefault();
     // console.log("hello")
     await calculateDistance();
 
+    console.log(totalDistance)
     let formData = new FormData();
 
     formData.append("name", name);
@@ -126,7 +134,7 @@ function BookCar() {
     try {
       // Make the POST request
       const res = await axios.post(
-        "http://localhost:8080/api/v1/user/booking",
+        "https://cab-book-online.onrender.com/api/v1/user/booking",
         formData
       );
 
@@ -138,7 +146,7 @@ function BookCar() {
         // Show success toast
         Swal.fire({
           title: `Thankyou ${name} For Booking `,
-          text: `Any Futher Information Contact - 6267144122`,
+          text: `Any Futher Information Contact - 073511 83413`,
           icon: "success",
         });
       } else {
@@ -220,14 +228,11 @@ function BookCar() {
                   </label>
                   <select value={carType} onChange={handleCar}>
                     <option>Select your car type</option>
-                    <option value="Audi A1 S-Line">Audi A1 S-Line</option>
-                    <option value="VW Golf 6">VW Golf 6</option>
-                    <option value="Toyota Camry">Toyota Camry</option>
-                    <option value="BMW 320 ModernLine">
-                      BMW 320 ModernLine
-                    </option>
-                    <option value="Mercedes-Benz GLK">Mercedes-Benz GLK</option>
-                    <option value="VW Passat CC">VW Passat CC</option>
+                    {
+                      CAR_DATA.map((car,ind)=>(
+                        <option key={ind} value={car.name}>{car.name}</option>
+                      ))
+                    }
                   </select>
                 </div>
 

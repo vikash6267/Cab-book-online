@@ -25,7 +25,7 @@ function Login() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:8080/api/v1/admin/login",
+        "https://cab-book-online.onrender.com/api/v1/admin/login",
         formData
       );
       console.log(response.data);

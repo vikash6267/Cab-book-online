@@ -46,7 +46,7 @@ function AddCab() {
 
     try {
       const res = await axios.post(
-        "http://localhost:8080/api/v1/admin/create",
+        "https://cab-book-online.onrender.com/api/v1/admin/create",
         formDataToSend,
         {
           headers: {
