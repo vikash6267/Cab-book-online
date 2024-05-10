@@ -6,88 +6,115 @@ import Benz from "../images/cars-big/benz.jpg";
 import Passat from "../images/cars-big/passatcc.jpg";
 
 export const CAR_DATA = [
-  [
-    {
-      name: "VW Golf 6",
-      price: "37",
-      img: Golf6,
-      model: "Golf 6",
-      mark: "Volkswagen",
-      year: "2008",
-      doors: "4/5",
-      air: "Yes",
-      transmission: "Manual",
-      fuel: "Diesel",
-    },
-  ],
-  [
-    {
-      name: "Audi A1 S-Line",
-      price: "45",
-      img: AudiA1,
-      model: "Audi",
-      mark: "A1",
-      year: "2012",
-      doors: "4/5",
-      air: "Yes",
-      transmission: "Manual",
-      fuel: "Gasoline",
-    },
-  ],
-  [
-    {
-      name: "Toyota Camry",
-      price: "30",
-      img: Toyota,
-      model: "Camry",
-      mark: "Toyota",
-      year: "2006",
-      doors: "4/5",
-      air: "Yes",
-      transmission: "Automatic",
-      fuel: "Hybrid",
-    },
-  ],
-  [
-    {
-      name: "BMW 320 ModernLine",
-      price: "35",
-      img: Bmw320,
-      model: "320",
-      mark: "BMW",
-      year: "2012",
-      doors: "4/5",
-      air: "Yes",
-      transmission: "Manual",
-      fuel: "Diesel",
-    },
-  ],
-  [
-    {
-      name: "Mercedes-Benz GLK",
-      price: "50",
-      img: Benz,
-      model: "Benz GLK",
-      mark: "Mercedes",
-      year: "2006",
-      doors: "4/5",
-      air: "Yes",
-      transmission: "Manual",
-      fuel: "Diesel",
-    },
-  ],
-  [
-    {
-      name: "VW Passat CC",
-      price: "25",
-      img: Passat,
-      model: "Passat CC",
-      mark: "Volkswagen",
-      year: "2008",
-      doors: "4/5",
-      air: "Yes",
-      transmission: "Automatic",
-      fuel: "Gasoline",
-    },
-  ],
-];
+  {
+    "name": "Swift Dzire",
+    "price": "100",
+    "img": "https://i.ibb.co/DW9Y3Xc/swift.png",
+    "model": "Swift Dzire",
+    "mark": "Maruti Suzuki",
+    "year": "2020",
+    "doors": "4",
+    "air": "Yes",
+    "transmission": "Manual",
+    "fuel": "Petrol",
+    "seats":"4+1"
+
+  },
+  {
+    "name": "Ertiga",
+    "price": "150",
+    "img": "https://i.ibb.co/HdRSj9D/Ertiga.png",
+    "model": "Ertiga",
+    "mark": "Maruti Suzuki",
+    "year": "2021",
+    "doors": "5",
+    "air": "Yes",
+    "transmission": "Manual",
+    "fuel": "Petrol",
+    "seats":"6+1"
+
+  },
+  {
+    "name": "Innova",
+    "price": "200",
+    "img": "https://i.ibb.co/JkR5Wg3/innova.png",
+    "model": "Innova",
+    "mark": "Toyota",
+    "year": "2019",
+    "doors": "5",
+    "air": "Yes",
+    "transmission": "Automatic",
+    "fuel": "Diesel",
+    "seats":"6+1"
+
+  },
+  {
+    "name": "Innova Crysta",
+    "price": "250",
+    "img": "https://i.ibb.co/BzMCZNG/innova2.png",
+    "model": "Innova Crysta",
+    "mark": "Toyota",
+    "year": "2020",
+    "doors": "5",
+    "air": "Yes",
+    "transmission": "Automatic",
+    "fuel": "Diesel",
+    "seats":"6+1"
+
+  },
+  {
+    "name": "Tempo Traveller 12 sitter",
+    "price": "300",
+    "img": "https://i.ibb.co/X7zRb5X/tempo.png",
+    "model": "Tempo Traveller",
+    "mark": "Force Motors",
+    "year": "2018",
+    "doors": "6",
+    "air": "Yes",
+    "transmission": "Manual",
+    "fuel": "Diesel",
+    "seats":"12"
+
+  },
+  {
+    "name": "Tempo Traveller 14 sitter",
+    "price": "320",
+    "img": "https://i.ibb.co/X7zRb5X/tempo.png",
+    "model": "Tempo Traveller",
+    "mark": "Force Motors",
+    "year": "2019",
+    "doors": "6",
+    "air": "Yes",
+    "transmission": "Manual",
+    "fuel": "Diesel",
+    "seats":"14"
+
+  },
+  {
+    "name": "Tempo Traveller 17 sitter",
+    "price": "350",
+    "img": "https://i.ibb.co/X7zRb5X/tempo.png",
+    "model": "Tempo Traveller",
+    "mark": "Force Motors",
+    "year": "2020",
+    "doors": "6",
+    "air": "Yes",
+    "transmission": "Manual",
+    "fuel": "Diesel",
+    "seats":"17"
+
+  },
+  {
+    "name": "Tempo Traveller 25 sitter",
+    "price": "400",
+    "img": "https://i.ibb.co/X7zRb5X/tempo.png",
+    "model": "Tempo Traveller",
+    "mark": "Force Motors",
+    "year": "2021",
+    "doors": "6",
+    "air": "Yes",
+    "transmission": "Manual",
+    "fuel": "Diesel",
+    "seats":"25"
+  }
+]
