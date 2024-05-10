@@ -25,11 +25,13 @@ function About() {
               <h3>About Company</h3>
               <h2>You start the engine and your adventure begins</h2>
               <p>
-                Certain but she but shyness why cottage. Guy the put instrument
-                sir entreaties affronting. Pretended exquisite see cordially the
-                you. Weeks quiet do vexed or whose. Motionless if no to
-                affronting imprudence no precaution. My indulged as disposal
-                strongly attended.
+                Our cab booking web app offers a diverse range of vehicles,
+                including the compact Swift Dzire sedan, spacious Ertiga SUV,
+                sturdy Innova SUV, luxurious Innova Crysta SUV, and versatile
+                Tempo Traveller in various seating capacities. Whether it's a
+                solo trip or a group excursion, we've got the perfect ride for
+                every occasion, ensuring comfort and convenience
+                throughout your journey.
               </p>
               <div className="about-main__text__icons">
                 <div className="about-main__text__icons__box">
@@ -66,7 +68,7 @@ function About() {
             <h2>Book a car by getting in touch with us</h2>
             <span>
               <IconPhone width={40} height={40} />
-              <h3>(123) 456-7869</h3>
+              <h3>+9173511 83413</h3>
             </span>
           </div>
         </div>
