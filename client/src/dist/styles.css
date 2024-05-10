@@ -81,7 +81,8 @@ body {
 }
 
 .navbar__img {
-  width: 14.5rem;
+  width: 16.5rem;
+  height: 5rem;
 }
 
 .navbar__img img {

@@ -15,6 +15,11 @@ function Navbar() {
       <nav>
         {/* mobile */}
         <div className={`mobile-navbar ${nav ? "open-nav" : ""}`}>
+        <div className=" absolute top-9  w-[200px] left-4">
+            <Link to="/" onClick={() => window.scrollTo(0, 0)}>
+              <img src={Logo} alt="logo-img" />
+            </Link>
+          </div>
           <div onClick={openNav} className="mobile-navbar__close">
             <IconX width={30} height={30} />
           </div>
