@@ -39,6 +39,9 @@ const cabSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    seats: {
+        type: String
+    }
 
 })
 
