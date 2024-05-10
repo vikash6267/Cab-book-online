@@ -6,6 +6,7 @@ import { IconUser } from "@tabler/icons-react";
 import { IconPhone } from "@tabler/icons-react";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { CAR_DATA } from "./CarData";
 
 function BookCar() {
   // booking car
@@ -138,7 +139,7 @@ function BookCar() {
         // Show success toast
         Swal.fire({
           title: `Thankyou ${name} For Booking `,
-          text: `Any Futher Information Contact - 6267144122`,
+          text: `Any Futher Information Contact - 073511 83413`,
           icon: "success",
         });
       } else {
@@ -220,14 +221,11 @@ function BookCar() {
                   </label>
                   <select value={carType} onChange={handleCar}>
                     <option>Select your car type</option>
-                    <option value="Audi A1 S-Line">Audi A1 S-Line</option>
-                    <option value="VW Golf 6">VW Golf 6</option>
-                    <option value="Toyota Camry">Toyota Camry</option>
-                    <option value="BMW 320 ModernLine">
-                      BMW 320 ModernLine
-                    </option>
-                    <option value="Mercedes-Benz GLK">Mercedes-Benz GLK</option>
-                    <option value="VW Passat CC">VW Passat CC</option>
+                    {
+                      CAR_DATA.map((car,ind)=>(
+                        <option key={ind} value={car.name}>{car.name}</option>
+                      ))
+                    }
                   </select>
                 </div>
 

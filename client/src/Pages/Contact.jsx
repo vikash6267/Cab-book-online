@@ -46,7 +46,7 @@ function Contact() {
         Swal.fire({
           icon: "success",
           title: `Thank you ${name} for contacting us!`,
-          text: "For further information, please contact: 6267144122",
+          text: "For further information, please contact: 073511 83413",
         });
       } else {
         Swal.fire({
