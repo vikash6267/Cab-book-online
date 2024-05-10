@@ -22,11 +22,11 @@ function Footer() {
 
               <li>
                 <a
-                  href="mailto: 
-                  anshcab@gmail.com"
+                  href="mailto:anshacabservice@gmail.com"
                   className=" flex gap-4 "
                 >
-                  <IconMail /> anshcab@gmail.com
+                  <IconMail /> 
+                  anshacabservice@gmail.com
                   &nbsp;  
                 </a>
               </li>

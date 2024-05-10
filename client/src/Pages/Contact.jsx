@@ -8,7 +8,7 @@ function Contact() {
   return (
     <>
       <Navbar />
-      <section className="contact-page">
+      <section className="contact-page ">
         <HeroPages name="Contact" />
         <div className="container">
           <div className="contact-div">
@@ -19,19 +19,20 @@ function Contact() {
                 research, development as well as a learning specialist. Over 15
                 years of experience.
               </p>
-              <a href="/">
-                <IconPhone /> &nbsp; (123) 456-7869
+              <a href="/" className="flex">
+                <IconPhone /> &nbsp; +9173511 83413
               </a>
-              <a href="/">
-                <IconMail /> &nbsp; carrental@carmail.com
+              <a href="/" className="flex">
+                <IconMail /> &nbsp; anshacabservice@gmail.com
               </a>
-              <a href="/">
+              <a href="/" className="flex">
                 <IconLocation />
-                &nbsp; Belgrade, Serbia
+                &nbsp; Dehradun, Utrakhand
               </a>
+
             </div>
-            <div className="contact-div__form">
-              <form>
+            <div className="contact-div__form ">
+              <form className=""> 
                 <label>
                   Full Name <b>*</b>
                 </label>
@@ -47,7 +48,7 @@ function Contact() {
                 </label>
                 <textarea placeholder="Write Here.."></textarea>
 
-                <button type="submit">
+                <button type="submit" className="flex ">
                   <IconMailOpened />
                   &nbsp; Send Message
                 </button>
@@ -62,7 +63,7 @@ function Contact() {
               <h2>Book a car by getting in touch with us</h2>
               <span>
                 <IconPhone width={40} height={40} />
-                <h3>(123) 456-7869</h3>
+                <h3>+91 73511 83413</h3>
               </span>
             </div>
           </div>

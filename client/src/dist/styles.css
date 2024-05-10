@@ -948,6 +948,9 @@ font-size: 1.3rem;
 }
 
 .plan-container__boxes__box {
+  display: flex;
+  flex-direction: column;
+ align-items: center;
   text-align: center;
   padding: 1rem 6rem;
 }
@@ -2330,6 +2333,7 @@ footer {
 .contact-div__form {
   display: flex;
   flex-direction: column;
+  width: 80vw;
 }
 
 .contact-div__form form {
