@@ -38,7 +38,7 @@ function Contact() {
     try {
       // Make the POST request
       const res = await axios.post(
-        "http://localhost:8080/api/v1/user/contact",
+        "https://cab-book-online.onrender.com/api/v1/user/contact",
         formData
       );
 
