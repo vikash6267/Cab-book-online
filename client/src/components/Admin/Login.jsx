@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { setToken, setUser } from "../../redux/authSlice";
-
+import "../../styles/index.css";
 function Login() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -39,54 +39,53 @@ function Login() {
   };
 
   return (
-    <div className=" w-screen h-screen flex items-center justify-center  relative ">
-      <div className=" w-screen h-screen flex items-center justify-center image-cont bg-cover bg-center filter blur-sm relative"></div>
-      <div className=" absolute bg-slate-400 h-[370px] rounded-2xl w-[300px] shadow-2xl shadow-red-500 ">
-        <div className=" m-5 flex flex-col justify-center items-center gap-12 border-2 border-green-300 rounded-xl pb-9 pt-3   ">
-          <p className=" font-bold text-2xl ">Login</p>
-
-          <div>
-            <form onSubmit={handleOnSubmit} className="">
-              <div className=" flex flex-col gap-2 ">
-                <label htmlFor="email" className=" text-lg">
-                  Email :
-                </label>
-                <input
-                  type="text"
-                  name="email"
-                  id="email"
-                  value={email}
-                  required
-                  placeholder="Enter email"
-                  className=" outline-yellow-200 placeholder:text-gray-500 rounded-sm outline "
-                  onChange={handleOnChange}
-                />
-              </div>
-
-              <div className=" flex flex-col gap-2 mt-4 ">
-                <label htmlFor="password" className=" text-lg">
-                  Password :
-                </label>
-                <input
-                  type="text"
-                  name="password"
-                  value={password}
-                  id="password"
-                  required
-                  placeholder="Enter Password"
-                  className=" outline-yellow-200 placeholder:text-gray-500 rounded-sm outline focus:outline-green-500 "
-                  onChange={handleOnChange}
-                />
-              </div>
-
-              <div className=" mt-5 flex items-center w-full justify-center">
-                <button className=" bg-yellow-400 p-1 px-2 rounded-lg text-lg hover:bg-yellow-500 hovel:scale-105 border-[0.1px] border-black">
-                  Login
-                </button>
-              </div>
-            </form>
+    <div className="flex items-center justify-center h-screen  ">
+      <div className="bg-gray-300 hover:bg-gray-200 p-8 rounded-lg shadow-lg w-[25%] h-auto">
+        <h2 className="text-3xl text-center font-semibold mb-4">Login</h2>
+        <div className="border border-b-2 border-blue-600 my-3"></div>
+        <form onSubmit={handleOnSubmit}>
+          <div className="mb-4">
+            <label
+              htmlFor="email"
+              className="block text-xl font-medium text-gray-700"
+            >
+              Email
+            </label>
+            <input
+              type="text"
+              name="email"
+              id="email"
+              value={email}
+              required
+              placeholder="Enter email"
+              className="mt-1 p-2 block w-full border rounded-md h-[50px] text-2xl"
+              onChange={handleOnChange}
+            />
           </div>
-        </div>
+          <div className="mb-4">
+            <label
+              htmlFor="password"
+              className="block text-xl font-medium text-gray-700"
+            >
+              Password
+            </label>
+            <input
+              type="password"
+              name="password"
+              value={password}
+              id="password"
+              required
+              placeholder="Enter Password"
+              className="mt-1 p-2 block w-full border rounded-md h-[50px] text-2xl"
+              onChange={handleOnChange}
+            />
+          </div>
+          <div className="flex items-center justify-center">
+            <button className="btn-grad" type="submit">
+              Login
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   );

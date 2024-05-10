@@ -28,7 +28,7 @@ const cabSchema = new mongoose.Schema({
         required: true
     },
     air: {
-        type: Boolean,
+        type: String,
         required: true
     },
     transmission: {

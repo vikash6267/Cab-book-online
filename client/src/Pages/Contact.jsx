@@ -78,7 +78,6 @@ function Contact() {
                 research, development, as well as a learning specialist. Over 15
                 years of experience.
               </p>
-<<<<<<< HEAD
               <a href="tel:+1234567869">
                 <IconPhone /> &nbsp; (123) 456-7869
               </a>
@@ -91,8 +90,6 @@ function Contact() {
               </p>
             </div>
             <div className="contact-div__form">
-              <form onSubmit={submitData}>
-=======
               <a href="/" className="flex">
                 <IconPhone /> &nbsp; +9173511 83413
               </a>
@@ -103,11 +100,9 @@ function Contact() {
                 <IconLocation />
                 &nbsp; Dehradun, Utrakhand
               </a>
-
             </div>
             <div className="contact-div__form ">
-              <form className=""> 
->>>>>>> 17904cc88cb210cc72428e3cdf1364e33f948597
+              <form onSubmit={submitData}>
                 <label>
                   Full Name <b>*</b>
                 </label>
