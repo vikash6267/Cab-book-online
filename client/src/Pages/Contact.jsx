@@ -78,15 +78,16 @@ function Contact() {
                 research, development, as well as a learning specialist. Over 15
                 years of experience.
               </p>
-              <a href="tel:+1234567869">
-                <IconPhone /> &nbsp; (123) 456-7869
+              <a href="tel:+91073511 83413" className="flex">
+                <IconPhone /> &nbsp; 073511 83413
+
               </a>
-              <a href="mailto:carrental@carmail.com">
-                <IconMail /> &nbsp; carrental@carmail.com
+              <a href="mailto:anshacabservice@gmail.com" className="flex">
+                <IconMail /> &nbsp; anshacabservice@gmail.com
               </a>
-              <p>
+              <p className="flex"> 
                 <IconLocation />
-                &nbsp; Belgrade, Serbia
+                &nbsp; Dehradun Utrakhand
               </p>
             </div>
             <div className="contact-div__form">
