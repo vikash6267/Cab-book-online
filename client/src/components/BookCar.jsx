@@ -4,7 +4,7 @@ import { IconMapPinFilled } from "@tabler/icons-react";
 import { IconCalendarEvent } from "@tabler/icons-react";
 import { IconUser } from "@tabler/icons-react";
 import { IconPhone } from "@tabler/icons-react";
-import axios from "axios"
+import axios from "axios";
 import Swal from "sweetalert2";
 
 function BookCar() {
@@ -13,13 +13,11 @@ function BookCar() {
   const [pickTime, setPickTime] = useState("");
   const [dropTime, setDropTime] = useState("");
   const [carImg, setCarImg] = useState("");
-const[name,setName] = useState("")
-const[contact,setContact] = useState("")
+  const [name, setName] = useState("");
+  const [contact, setContact] = useState("");
 
-
-
-  const [fromValue, setFromValue] = useState('');
-  const [toValue, setToValue] = useState('');
+  const [fromValue, setFromValue] = useState("");
+  const [toValue, setToValue] = useState("");
   const [fromSuggestions, setFromSuggestions] = useState([]);
   const [toSuggestions, setToSuggestions] = useState([]);
   const [totalDistance, setTotalDistance] = useState(null);
@@ -53,18 +51,11 @@ const[contact,setContact] = useState("")
     setToSuggestions([]);
   };
 
-
-
-
-
-
   // taking value of booking inputs
   const handleCar = (e) => {
     setCarType(e.target.value);
     setCarImg(e.target.value);
   };
-
-
 
   const handlePickTime = (e) => {
     setPickTime(e.target.value);
@@ -76,7 +67,6 @@ const[contact,setContact] = useState("")
 
   // based on value name show car img
 
-
   // hide message
   const hideMessage = () => {
     const doneMsg = document.querySelector(".booking-done");
@@ -87,121 +77,98 @@ const[contact,setContact] = useState("")
     const origin = fromValue;
     const destination = toValue;
     const service = new window.google.maps.DistanceMatrixService();
-    service.getDistanceMatrix({
-      origins: [origin],
-      destinations: [destination],
-      travelMode: 'DRIVING',
-      unitSystem: window.google.maps.UnitSystem.METRIC,
-      avoidHighways: false,
-      avoidTolls: false
-    }, (response, status) => {
-      if (status === 'OK') {
-        const distance = response.rows[0].elements[0].distance.text;
-        setTotalDistance(distance);
-      } else {
-        setTotalDistance('Error calculating distance');
+    service.getDistanceMatrix(
+      {
+        origins: [origin],
+        destinations: [destination],
+        travelMode: "DRIVING",
+        unitSystem: window.google.maps.UnitSystem.METRIC,
+        avoidHighways: false,
+        avoidTolls: false,
+      },
+      (response, status) => {
+        if (status === "OK") {
+          const distance = response.rows[0].elements[0].distance.text;
+          setTotalDistance(distance);
+        } else {
+          setTotalDistance("Error calculating distance");
+        }
       }
-    });
+    );
   };
 
-
-  const submitData = async(e) =>{
-    e.preventDefault()
+  const submitData = async (e) => {
+    e.preventDefault();
     // console.log("hello")
-    await calculateDistance()
+    await calculateDistance();
 
-    let formData = new FormData()
+    let formData = new FormData();
 
-    formData.append("name" , name)
-    formData.append("carType",carType)
-    formData.append("from",fromValue)
-    formData.append("to",toValue)
-    formData.append("pickupDate",pickTime)
-    formData.append("dropDate",dropTime)
-    formData.append("contact",contact)
-    formData.append("distance",totalDistance)
+    formData.append("name", name);
+    formData.append("carType", carType);
+    formData.append("from", fromValue);
+    formData.append("to", toValue);
+    formData.append("pickupDate", pickTime);
+    formData.append("dropDate", dropTime);
+    formData.append("contact", contact);
+    formData.append("distance", totalDistance);
 
-    // console.log(formData)
-
-    // Swal.fire({
-    //   title: 'Loading',
-    //   allowOutsideClick: false,
-    //   allowEscapeKey: false,
-    //   allowEnterKey: false,
-    //   showConfirmButton: false,
-    //   html: '<div class="spinner-border" role="status"><span class="sr-only">Loading...</span></div>'
-    // });
-    
-    // const res = await axios.post( "http://localhost:8080/api/v1/user/booking", formData)
-
-   
-    // if(res?.data?.success){
-    //   Swal.fire({
-    //     title: `Thankyou ${name} For Booking `,
-    //     text: `Any Futher Information Contact - 6267144122`,
-    //     icon: "success",
-    //   });
-    // }
-
-
-
-// Show loading toast
-Swal.fire({
-  title: 'Loading',
-  allowOutsideClick: false,
-  allowEscapeKey: false,
-  allowEnterKey: false,
-  showConfirmButton: false,
-  html: '<div class="spinner-border" role="status"><span class="sr-only">Loading...</span></div>'
-});
-
-try {
-  // Make the POST request
-  const res = await axios.post("http://localhost:8080/api/v1/user/booking", formData);
-
-  // Check if response is successful
-  if (res?.data?.success) {
-    // Close loading toast
-    Swal.close();
-
-    // Show success toast
+    // Show loading toast
     Swal.fire({
+      title: "Loading",
+      allowOutsideClick: false,
+      allowEscapeKey: false,
+      allowEnterKey: false,
+      showConfirmButton: false,
+      html: '<div class="spinner-border" role="status"><span class="sr-only">Loading...</span></div>',
+    });
+
+    try {
+      // Make the POST request
+      const res = await axios.post(
+        "http://localhost:8080/api/v1/user/booking",
+        formData
+      );
+
+      // Check if response is successful
+      if (res?.data?.success) {
+        // Close loading toast
+        Swal.close();
+
+        // Show success toast
+        Swal.fire({
           title: `Thankyou ${name} For Booking `,
           text: `Any Futher Information Contact - 6267144122`,
           icon: "success",
         });
-  } else {
-    // Close loading toast
-    Swal.close();
+      } else {
+        // Close loading toast
+        Swal.close();
 
-    // Show error toast
-    Swal.fire({
-      icon: 'error',
-      title: 'Error',
-      text: 'Booking failed. Please try again later.'
-    });
-  }
-} catch (error) {
-  // Close loading toast
-  Swal.close();
+        // Show error toast
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          text: "Booking failed. Please try again later.",
+        });
+      }
+    } catch (error) {
+      // Close loading toast
+      Swal.close();
 
-  // Show error toast if request fails
-  Swal.fire({
-    icon: 'error',
-    title: 'Error',
-    text: 'An error occurred while processing your request. Please try again later.'
-  });
-}
-
-
-
-  }
+      // Show error toast if request fails
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "An error occurred while processing your request. Please try again later.",
+      });
+    }
+  };
 
   return (
     <>
       <section id="booking-section" className="book-section">
         {/* overlay */}
-       
 
         <div className="container">
           <div className="book-content">
@@ -218,38 +185,33 @@ try {
               </p> */}
 
               <form className="box-form" onSubmit={submitData}>
-
-              <div className="box-form__car-type">
+                <div className="box-form__car-type">
                   <label>
-                    <IconUser className="input-icon" /> &nbsp; Enter Your Name <b>*</b>
+                    <IconUser className="input-icon" /> &nbsp; Enter Your Name{" "}
+                    <b>*</b>
                   </label>
-               <input type="text" 
-               placeholder="Enter Your name"
-               value={name}
-               onChange={(e)=>setName(e.target.value)}
-          className="w-full px-4 py-4 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 text-2xl"
-               
-                />
+                  <input
+                    type="text"
+                    placeholder="Enter Your name"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    className="w-full px-4 py-4 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 text-2xl"
+                  />
                 </div>
-
-
 
                 <div className="box-form__car-type">
                   <label>
-                    <IconPhone className="input-icon" /> &nbsp; Contact Number <b>*</b>
+                    <IconPhone className="input-icon" /> &nbsp; Contact Number{" "}
+                    <b>*</b>
                   </label>
-               <input type="text" 
-               placeholder="Enter Your Number"
-               value={contact}
-               onChange={(e)=>setContact(e.target.value)}
-          className="w-full px-4 py-4 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 text-2xl"
-               
-                />
+                  <input
+                    type="text"
+                    placeholder="Enter Your Number"
+                    value={contact}
+                    onChange={(e) => setContact(e.target.value)}
+                    className="w-full px-4 py-4 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 text-2xl"
+                  />
                 </div>
-
-
-
-
 
                 <div className="box-form__car-type">
                   <label>
@@ -284,25 +246,23 @@ try {
                   </select> */}
 
                   <input
-          type="text"
-          placeholder="From"
-          value={fromValue}
-          onChange={onChangeFrom}
-          className="w-full px-4 py-4 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 text-2xl"
-        />
-        <ul className="mt-2">
-          {fromSuggestions.map((suggestion) => (
-            <li
-              key={suggestion.place_id}
-              onClick={() => onSuggestionSelectedFrom(suggestion)}
-              className="cursor-pointer hover:bg-gray-100 px-4 py-2 text-2xl"
-            >
-              {suggestion.description}
-            </li>
-          ))}
-        </ul>
-
-
+                    type="text"
+                    placeholder="From"
+                    value={fromValue}
+                    onChange={onChangeFrom}
+                    className="w-full px-4 py-4 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 text-2xl"
+                  />
+                  <ul className="mt-2">
+                    {fromSuggestions.map((suggestion) => (
+                      <li
+                        key={suggestion.place_id}
+                        onClick={() => onSuggestionSelectedFrom(suggestion)}
+                        className="cursor-pointer hover:bg-gray-100 px-4 py-2 text-2xl"
+                      >
+                        {suggestion.description}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
 
                 <div className="box-form__car-type">
@@ -310,34 +270,25 @@ try {
                     <IconMapPinFilled className="input-icon" /> &nbsp; Drop-of{" "}
                     <b>*</b>
                   </label>
-                  {/* <select value={dropOff} onChange={handleDrop}>
-                    <option>Select drop off location</option>
-                    <option>Novi Sad</option>
-                    <option>Belgrade</option>
-                    <option>Nis</option>
-                    <option>Kragujevac</option>
-                    <option>Subotica</option>
-                  </select> */}
 
                   <input
-          type="text"
-          placeholder="To"
-          value={toValue}
-          onChange={onChangeTo}
-          className="w-full px-4 py-4 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 text-2xl"
-        />
-        <ul className="mt-2">
-          {toSuggestions.map((suggestion) => (
-            <li
-              key={suggestion.place_id}
-              onClick={() => onSuggestionSelectedTo(suggestion)}
-              className="cursor-pointer hover:bg-gray-100 px-4 py-2 text-2xl"
-            >
-              {suggestion.description}
-            </li>
-          ))}
-        </ul>
-
+                    type="text"
+                    placeholder="To"
+                    value={toValue}
+                    onChange={onChangeTo}
+                    className="w-full px-4 py-4 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 text-2xl"
+                  />
+                  <ul className="mt-2">
+                    {toSuggestions.map((suggestion) => (
+                      <li
+                        key={suggestion.place_id}
+                        onClick={() => onSuggestionSelectedTo(suggestion)}
+                        className="cursor-pointer hover:bg-gray-100 px-4 py-2 text-2xl"
+                      >
+                        {suggestion.description}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
 
                 <div className="box-form__car-time ">
@@ -350,7 +301,7 @@ try {
                     value={pickTime}
                     onChange={handlePickTime}
                     type="date"
-                    min={new Date().toISOString().split('T')[0]}
+                    min={new Date().toISOString().split("T")[0]}
                   ></input>
                 </div>
 
@@ -368,9 +319,7 @@ try {
                   ></input>
                 </div>
 
-                <button  type="submit">
-                  Submit
-                </button>
+                <button type="submit">Submit</button>
               </form>
             </div>
           </div>
@@ -378,8 +327,6 @@ try {
       </section>
 
       {/* modal ------------------------------------ */}
-
-     
     </>
   );
 }
