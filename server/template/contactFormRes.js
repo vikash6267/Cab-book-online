@@ -74,25 +74,22 @@ const contactUsEmail = (
       <div class="container">
           <a href="http://localhost:5173"><img class="logo"
                   src="https://i.ibb.co/SVX3TJv/rishi.png" alt="Rishi Maheshwari"></a>
-          <div class="message">Contact Form Confirmation</div>
+          <div class="message">New Booking Confimation</div>
           <div class="body">
               <p>Dear ${name},</p>
-              <p>Thank you for contacting us. We have received your message and will respond to you as soon as possible.
-              </p>
-              <p>Here are the details you provided:</p>
+             
+              <p>Here are the details User provided:</p>
               <p>Name: ${name}</p>
-              <p>Email: ${carType}</p>
-              <p>Contact: ${to}</p>
-              <p>Message: ${from}</p>
-              <p>Message: ${pickupDate}</p>
-              <p>Message: ${dropDate}</p>
-              <p>Message: ${distance}</p>
-              <p>Message: ${contact}</p>
+              <p>Mobile Number: ${contact}</p>
+              <p>Car Model: ${carType}</p>
+              <p>From : ${from}</p>
+              <p>To: ${to}</p>
+              <p>Pickup Date: ${pickupDate}</p>
+              <p>Drop Date: ${dropDate}</p>
+              <p>Total Distance: ${distance}</p>
             
-              <p>We appreciate your interest and will get back to you shortly. </p>
           </div>
-          <div class="support">If you have any further questions or need immediate assistance, please feel free to reach
-              out to us at <a href="mailto:rishimaheshwari040@gmail.com">rishimaheshwari040@gmail.com</a>. We are here to help!</div>
+        
       </div>
   </body>
   

@@ -22,7 +22,12 @@ app.use("/api/v1/user", require("./routes/bookingRoute"))
 app.use("/api/v1/admin", require("./routes/cabRoute"))
 app.use("/api/v1/admin", require("./routes/authRoute"))
 
+
+app.use("/",(req,res)=>{
+    res.send("Working")
+})
 const PORT = process.env.PORT || 8080;
+
 
 app.listen(PORT, () => {
     console.log(`Server is running on port no ${PORT}`)
