@@ -6,27 +6,27 @@ import { FaBars } from "react-icons/fa";
 
 import { AiOutlineDashboard } from "react-icons/ai";
 import { GiScooter } from "react-icons/gi";
-import { BiSolidOffer } from "react-icons/bi";
+import { FaHome } from "react-icons/fa";
 
 function Sidebar() {
   const sidebarLinks = [
     {
       id: 1,
+      name: "Home",
+      path: "/",
+      icon: <FaHome />,
+    },
+    {
+      id: 2,
       name: "Dashboard",
       path: "/admin/dashboard",
       icon: <AiOutlineDashboard />,
     },
     {
-      id: 2,
+      id: 3,
       name: "Add Cars",
       path: "/admin/add-car",
       icon: <GiScooter />,
-    },
-    {
-      id: 4,
-      name: "All Cars",
-      path: "/admin/all-cars",
-      icon: <BiSolidOffer />,
     },
   ];
 
