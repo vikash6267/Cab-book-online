@@ -8,6 +8,11 @@ import TestimonialsPage from "./Pages/TestimonialsPage";
 import Team from "./Pages/Team";
 import Contact from "./Pages/Contact";
 
+
+// public and private route 
+import OpenRoute from "./components/Admin/auth/OpenRoute"
+import Login from "./components/Admin/Login";
+
 function App() {
   return (
     <>
@@ -15,11 +20,16 @@ function App() {
       <Routes>
         <Route index path="/" element={<Home />} />
         <Route path="about" element={<About />} />
-        {/* <Route path="models" element={<Models />} /> */}
-        {/* <Route path="testimonials" element={<TestimonialsPage />} /> */}
-        {/* <Route path="team" element={<Team />} /> */}
-
         <Route path="contact" element={<Contact />} />
+
+        <Route
+          path="/admin/login"
+          element={
+            <OpenRoute>
+              <Login />
+            </OpenRoute>
+          }
+        />
       </Routes>
     </>
   );
