@@ -2271,7 +2271,7 @@ footer {
 
 .contact-div {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  /* grid-template-columns: 1fr 1fr; */
   gap: 3rem;
   margin: 0 auto;
   color: #010103;
@@ -2284,7 +2284,8 @@ footer {
 
 @media (max-width: 950px) {
   .contact-div {
-    grid-template-columns: 1fr;
+    /* display: block;
+    grid-template-columns: 1fr; */
     text-align: center;
   }
 }
@@ -2298,6 +2299,8 @@ footer {
 
 @media (max-width: 950px) {
   .contact-div__text {
+    display: flex;
+    flex-direction: column;
     margin: 0 auto;
     margin-bottom: 2rem;
   }
@@ -2354,6 +2357,7 @@ footer {
 .contact-div__form form input {
   background-color: #f2f2f2;
   padding: 19px 30px 19px 30px;
+  width: 100%;
   font-size: 1.6rem;
   border: none;
   outline: none;

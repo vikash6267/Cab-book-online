@@ -71,7 +71,7 @@ function Contact() {
         <HeroPages name="Contact" />
         <div className="container">
           <div className="contact-div">
-            <div className="contact-div__text">
+            <div className="contact-div__text flex col">
               <h2>Need additional information?</h2>
               <p>
                 A multifaceted professional skilled in multiple fields of
@@ -90,7 +90,7 @@ function Contact() {
                 &nbsp; Dehradun Utrakhand
               </p>
             </div>
-            <div className="contact-div__form">
+            {/* <div className="contact-div__form">
               <a href="/" className="flex">
                 <IconPhone /> &nbsp; +9173511 83413
               </a>
@@ -101,7 +101,7 @@ function Contact() {
                 <IconLocation />
                 &nbsp; Dehradun, Utrakhand
               </a>
-            </div>
+            </div> */}
             <div className="contact-div__form ">
               <form onSubmit={submitData}>
                 <label>
