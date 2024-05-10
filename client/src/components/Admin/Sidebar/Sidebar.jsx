@@ -18,26 +18,14 @@ function Sidebar() {
     },
     {
       id: 2,
-      name: "Add Offer",
-      path: "/admin/add-offer",
-      icon: <GiScooter />,
-    },
-    {
-      id: 3,
-      name: "Add Service",
-      path: "/admin/add-service",
+      name: "Add Cars",
+      path: "/admin/add-car",
       icon: <GiScooter />,
     },
     {
       id: 4,
-      name: "All Offers",
-      path: "/admin/all-offers",
-      icon: <BiSolidOffer />,
-    },
-    {
-      id: 5,
-      name: "All Services",
-      path: "/admin/all-service",
+      name: "All Cars",
+      path: "/admin/all-cars",
       icon: <BiSolidOffer />,
     },
   ];

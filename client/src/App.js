@@ -3,8 +3,6 @@ import About from "./Pages/About";
 import Home from "./Pages/Home";
 import { Route, Routes } from "react-router-dom";
 import Models from "./Pages/Models";
-import TestimonialsPage from "./Pages/TestimonialsPage";
-import Team from "./Pages/Team";
 import Contact from "./Pages/Contact";
 
 
@@ -13,6 +11,7 @@ import OpenRoute from "./components/Admin/auth/OpenRoute"
 import PrivateRoute from "./components/Admin/auth/PrivateRoute"
 import Login from "./components/Admin/Login";
 import Dashboard from "./components/Admin/Sidebar/Dashboard";
+import AddCab from "./components/Admin/Sidebar/AddCab";
 
 function App() {
   return (
@@ -49,14 +48,15 @@ function App() {
             }
           />
 
-          {/* <Route
-            path="/admin/add-offer"
+          <Route
+            path="/admin/add-car"
             element={
               <PrivateRoute>
-                <AddOffer />
+                <AddCab />
               </PrivateRoute>
             }
           />
+          {/*
           <Route
             path="/admin/add-service"
             element={

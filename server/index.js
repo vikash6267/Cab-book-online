@@ -31,6 +31,7 @@ cloudinaryConnect();
 app.use("/api/v1/user", require("./routes/bookingRoute"))
 app.use("/api/v1/admin", require("./routes/cabRoute"))
 app.use("/api/v1/admin", require("./routes/authRoute"))
+app.use("/api/v1/user", require("./routes/contact"))
 
 
 app.use("/", (req, res) => {
