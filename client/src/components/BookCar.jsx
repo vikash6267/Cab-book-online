@@ -7,6 +7,7 @@ import { IconPhone } from "@tabler/icons-react";
 import axios from "axios";
 import Swal from "sweetalert2";
 import { CAR_DATA } from "./CarData";
+import { distance } from "framer-motion";
 
 function BookCar() {
   // booking car
@@ -88,21 +89,27 @@ function BookCar() {
         avoidTolls: false,
       },
       (response, status) => {
+        console.log("Response:", response);
+        console.log("Status:", status);
         if (status === "OK") {
           const distance = response.rows[0].elements[0].distance.text;
+          console.log("Distance:", distance);
           setTotalDistance(distance);
         } else {
+          console.error("Error calculating distance:", status);
           setTotalDistance("Error calculating distance");
         }
       }
     );
   };
+  
 
   const submitData = async (e) => {
     e.preventDefault();
     // console.log("hello")
     await calculateDistance();
 
+    console.log(totalDistance)
     let formData = new FormData();
 
     formData.append("name", name);
