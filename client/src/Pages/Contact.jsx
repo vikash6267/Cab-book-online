@@ -2,10 +2,12 @@ import { IconMail, IconMailOpened, IconPhone } from "@tabler/icons-react";
 import Footer from "../components/Footer";
 import HeroPages from "../components/HeroPages";
 import { IconLocation } from "@tabler/icons-react";
+import Navbar from "../components/Navbar";
 
 function Contact() {
   return (
     <>
+      <Navbar />
       <section className="contact-page">
         <HeroPages name="Contact" />
         <div className="container">

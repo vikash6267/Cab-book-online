@@ -2,10 +2,12 @@ import { IconPhone } from "@tabler/icons-react";
 import Footer from "../components/Footer";
 import HeroPages from "../components/HeroPages";
 import Testimonials from "../components/Testimonials";
+import Navbar from "../components/Navbar";
 
 function TestimonialsPage() {
   return (
     <>
+      <Navbar />
       <section className="testimonial-page">
         <HeroPages name="Testimonials" />
         <Testimonials />

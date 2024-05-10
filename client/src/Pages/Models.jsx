@@ -8,10 +8,12 @@ import CarImg5 from "../images/cars-big/benz-box.png";
 import CarImg6 from "../images/cars-big/passat-box.png";
 import { Link } from "react-router-dom";
 import { IconCar, IconPhone, IconStar } from "@tabler/icons-react";
+import Navbar from "../components/Navbar";
 
 function Models() {
   return (
     <>
+      <Navbar />
       <section className="models-section">
         <HeroPages name="Vehicle Models" />
         <div className="container">

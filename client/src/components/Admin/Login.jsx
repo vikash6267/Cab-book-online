@@ -1,6 +1,8 @@
+import axios from "axios";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { setToken, setUser } from "../../redux/authSlice";
 
 function Login() {
   const navigate = useNavigate();
@@ -22,7 +24,18 @@ function Login() {
   const handleOnSubmit = async (e) => {
     e.preventDefault();
     try {
-    } catch (error) {}
+      const response = await axios.post(
+        "http://localhost:8080/api/v1/admin/login",
+        formData
+      );
+      console.log(response.data);
+      dispatch(setToken(response?.data.token));
+      dispatch(setUser(response.data.user));
+      localStorage.setItem("token", JSON.stringify(response.data.token));
+      navigate("/admin/dashboard");
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
