@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CarBox from "./CarBox";
 import { CAR_DATA } from "./CarData";
+import axios from "axios";
 
 function PickCar() {
   const [activeCarIndex, setActiveCarIndex] = useState(0); // Default active car index
@@ -18,6 +19,25 @@ function PickCar() {
     setActiveCarIndex(index);
     btnID(`btn${index}`); // Change button color
   };
+  const [cabs, setCabs] = useState([]);
+
+  
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          "https://cab-book-online.onrender.com/api/v1/admin/get"
+        );
+        console.log(response.data.cabs);
+        setCabs(response.data.cabs);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
 
   return (
     <>
@@ -35,19 +55,19 @@ function PickCar() {
             <div className="pick-container__car-content">
               {/* Pick car buttons */}
               <div className="pick-box">
-                {CAR_DATA.map((car, index) => (
+                {cabs.map((car, index) => (
                   <button
                     key={index}
                     className={`${coloringButton(`btn${index}`)}`}
                     onClick={() => handleCarButtonClick(index)}
                   >
-                    {car.name}
+                    {car.vName}
                   </button>
                 ))}
               </div>
 
               {/* Display selected car details */}
-              <CarBox data={CAR_DATA} carID={activeCarIndex} />
+              <CarBox data={cabs} carID={activeCarIndex} />
             </div>
           </div>
         </div>

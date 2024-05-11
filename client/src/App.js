@@ -11,17 +11,39 @@ import OpenRoute from "./components/Admin/auth/OpenRoute"
 import PrivateRoute from "./components/Admin/auth/PrivateRoute"
 import Login from "./components/Admin/Login";
 import Dashboard from "./components/Admin/Sidebar/Dashboard";
-import AllCab from "./components/Admin/Sidebar/AddCab";
+import AllCab from "./components/Admin/Sidebar/AllCab";
 import AddCab from "./components/Admin/Sidebar/AddCab";
 import Whatsapp from "./components/Whatsapp";
 import Call from "./components/Call";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 function App() {
+  const [cabs, setCabs] = useState([]);
+
+  
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          "https://cab-book-online.onrender.com/api/v1/admin/get"
+        );
+        console.log(response.data.cabs);
+        setCabs(response.data.cabs);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+
   return (
     <>
 
       <Routes>
-        <Route index path="/" element={<Home />} />
+        <Route index path="/" element={<Home cabs={cabs} />} />
         <Route path="about" element={<About />} />
         <Route path="contact" element={<Contact />} />
         <Route path="/models" element={<Models />} />

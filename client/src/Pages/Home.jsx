@@ -9,15 +9,18 @@ import Faq from "../components/Faq";
 import Download from "../components/Download";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import { useEffect } from "react";
 
-function Home() {
+function Home({cabs}) {
+  
+ 
   return (
     <>
       <Navbar />
       <Hero />
       <BookCar />
       <PlanTrip />
-      <PickCar />
+      <PickCar cabs={cabs} />
       <Banner />
       <ChooseUs />
       {/* <Testimonials /> */}

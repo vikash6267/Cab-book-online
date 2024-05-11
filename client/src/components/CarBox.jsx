@@ -18,7 +18,7 @@ function CarBox({ data, carID }) {
         {carLoad && <span className="loader"></span>}
         <img
           style={{ display: carLoad ? "none" : "block" }}
-          src={car.img}
+          src={car.image}
           alt="car_img"
           onLoad={() => setCarLoad(false)}
         />
@@ -26,17 +26,17 @@ function CarBox({ data, carID }) {
       {/* description */}
       <div className="pick-description">
         <div className="pick-description__price">
-          <span className=" flex items-center "><IconCurrencyRupee className="text-3xl" />{car.price}</span>/ rent per day
+          <span className=" flex items-center "><IconCurrencyRupee className="text-3xl" />{car.price}</span>/  per KM
         </div>
         <div className="pick-description__table">
           <div className="pick-description__table__col">
             <span>Model</span>
-            <span>{car.model}</span>
+            <span>{car.modelNumber}</span>
           </div>
 
           <div className="pick-description__table__col">
-            <span>Mark</span>
-            <span>{car.mark}</span>
+            <span>Compony</span>
+            <span>{car.modelNumber}</span>
           </div>
 
           <div className="pick-description__table__col">
@@ -54,6 +54,10 @@ function CarBox({ data, carID }) {
             <span>{car.air}</span>
           </div>
 
+          <div className="pick-description__table__col">
+            <span>Seats</span>
+            <span>{car.seats}</span>
+          </div>
           <div className="pick-description__table__col">
             <span>Transmission</span>
             <span>{car.transmission}</span>

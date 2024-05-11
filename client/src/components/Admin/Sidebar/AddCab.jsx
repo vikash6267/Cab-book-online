@@ -42,7 +42,7 @@ function AddCab() {
     formDataToSend.append("transmission", formData.transmission);
     formDataToSend.append("fuel", formData.fuel);
     formDataToSend.append("seats", formData.seats);
-    formDataToSend.append("image", formData.image);
+     formDataToSend.append("image", formData.image);
 
     try {
       const res = await axios.post(
@@ -98,6 +98,7 @@ function AddCab() {
             id="price"
             type="number"
             name="price"
+            placeholder="Enter Price Per KM"
             value={formData.price}
             onChange={handleChange}
           />
@@ -107,13 +108,14 @@ function AddCab() {
             className="block text-gray-700 text-xl font-bold mb-2"
             htmlFor="modelNumber"
           >
-            Model Number:
+            Vehicle Compony Name:
           </label>
           <input
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-[50px] text-2xl"
             id="modelNumber"
             type="text"
             name="modelNumber"
+            placeholder="Vehicle Compoy name eg.  Maruti Toyata Kia  "
             value={formData.modelNumber}
             onChange={handleChange}
           />
@@ -130,6 +132,7 @@ function AddCab() {
             id="vName"
             type="text"
             name="vName"
+            placeholder="Vehicle Name"
             value={formData.vName}
             onChange={handleChange}
           />
@@ -146,6 +149,7 @@ function AddCab() {
             id="year"
             type="number"
             name="year"
+            placeholder="Vehicle Model Year"
             value={formData.year}
             onChange={handleChange}
           />
@@ -161,6 +165,7 @@ function AddCab() {
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-[50px] text-2xl"
             id="doors"
             type="number"
+            placeholder="Number of Door in Vehichle "
             name="doors"
             value={formData.doors}
             onChange={handleChange}
@@ -171,33 +176,43 @@ function AddCab() {
             className="block text-gray-700 text-xl font-bold mb-2"
             htmlFor="air"
           >
-            Air:
+            Ac/Non-Ac:
           </label>
-          <input
+          <select
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-[50px] text-2xl"
             id="air"
-            type="text"
             name="air"
             value={formData.air}
             onChange={handleChange}
-          />
+          >
+            <option>Selcted Ac Non Ac</option>
+
+            <option value="Yes">AC</option>
+            <option value="No">Non-AC</option>
+          </select>
         </div>
+
         <div className="mb-4">
           <label
             className="block text-gray-700 text-xl font-bold mb-2"
             htmlFor="transmission"
           >
-            Transmission:
+            Vehicle Type:
           </label>
-          <input
+          <select
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-[50px] text-2xl"
             id="transmission"
-            type="text"
             name="transmission"
             value={formData.transmission}
             onChange={handleChange}
-          />
+          >
+            <option>Selcted Car Type</option>
+
+            <option value="Manual">Manual</option>
+            <option value="Automatic">Automatic</option>
+          </select>
         </div>
+
         <div className="mb-4">
           <label
             className="block text-gray-700 text-xl font-bold mb-2"
@@ -205,15 +220,22 @@ function AddCab() {
           >
             Fuel:
           </label>
-          <input
+          <select
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-[50px] text-2xl"
             id="fuel"
-            type="text"
             name="fuel"
             value={formData.fuel}
             onChange={handleChange}
-          />
+          >
+            <option value="">Select Fuel</option>
+            <option value="Petrol">Petrol</option>
+            <option value="Diesel">Diesel</option>
+            <option value="Electric">Electric</option>
+            <option value="Gasoline">Gasoline</option>
+            {/* Add more options as needed */}
+          </select>
         </div>
+
         <div className="mb-4">
           <label
             className="block text-gray-700 text-xl font-bold mb-2"

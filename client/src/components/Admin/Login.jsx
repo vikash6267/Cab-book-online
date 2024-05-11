@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { setToken, setUser } from "../../redux/authSlice";
 import "../../styles/index.css";
+import Swal from "sweetalert2";
 function Login() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -23,24 +24,57 @@ function Login() {
 
   const handleOnSubmit = async (e) => {
     e.preventDefault();
+    Swal.fire({
+      title: "Loading",
+      allowOutsideClick: false,
+      allowEscapeKey: false,
+      allowEnterKey: false,
+      showConfirmButton: false,
+      html: '<div class="spinner-border" role="status"><span class="sr-only">Loading...</span></div>',
+    });
     try {
       const response = await axios.post(
         "https://cab-book-online.onrender.com/api/v1/admin/login",
         formData
       );
+
+      console.log()
+      if(!response?.data?.success){
+        Swal.close();
+
+        // Show success toast
+        Swal.fire({
+          title: `Something went wrong try again later`,
+          text: ``,
+          icon: "error",
+        });
+        return 
+        
+      }
+      Swal.close();
+
+      // Show success toast
+      Swal.fire({
+        title: `Login Successfully `,
+        text: ``,
+        icon: "success",
+      });
+
+
+
       console.log(response.data);
       dispatch(setToken(response?.data.token));
       dispatch(setUser(response.data.user));
       localStorage.setItem("token", JSON.stringify(response.data.token));
-      navigate("/admin/dashboard");
+      navigate("/admin/all-cab");
     } catch (error) {
       console.log(error);
     }
   };
 
   return (
-    <div className="flex items-center justify-center h-screen  ">
-      <div className="bg-gray-300 hover:bg-gray-200 p-8 rounded-lg shadow-lg w-[25%] h-auto">
+    <div className="flex items-center justify-center h-screen   ">
+      <div className="bg-gray-300 hover:bg-gray-200 p-8 rounded-lg shadow-lg lg:w-[25%] h-auto">
         <h2 className="text-3xl text-center font-semibold mb-4">Login</h2>
         <div className="border border-b-2 border-blue-600 my-3"></div>
         <form onSubmit={handleOnSubmit}>

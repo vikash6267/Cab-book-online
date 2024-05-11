@@ -7,8 +7,21 @@ import { FaBars } from "react-icons/fa";
 import { AiOutlineDashboard } from "react-icons/ai";
 import { GiScooter } from "react-icons/gi";
 import { FaHome } from "react-icons/fa";
+import { IoIosLogOut } from "react-icons/io";
+import { setToken, setUser } from "../../../redux/authSlice";
+import { useDispatch } from "react-redux";
+
+
 
 function Sidebar() {
+  const dispatch = useDispatch()
+
+  const handleLogout = async() => {
+    localStorage.removeItem("token");
+    dispatch(setToken(null))
+    dispatch(setUser(null))
+  };
+  
   const sidebarLinks = [
     {
       id: 1,
@@ -28,6 +41,7 @@ function Sidebar() {
       path: "/admin/add-car",
       icon: <GiScooter />,
     },
+  
   ];
 
   const [isOpen, setIsOpen] = useState(false);
@@ -77,16 +91,10 @@ function Sidebar() {
               exit="hidden"
               className="whitespace-nowrap text-2xl text-blue-200 font-mulish capitalize"
             >
-              {/* <div className="flex gap-2">
-                {" "}
-                <img
-                  src="https://i.ibb.co/64ncqHK/logo.png"
-                  alt=""
-                  width={50}
-                  className=" rounded-full"
-                />{" "}
-                EV
-              </div> */}
+              <div className="flex gap-2 pl-5 items-center text-3xl mt-2 text-black " onClick={handleLogout}>
+              <IoIosLogOut />       Logout
+              
+              </div>
             </motion.h1>
           )}
         </AnimatePresence>
@@ -107,7 +115,7 @@ function Sidebar() {
                 matchRoute(link?.path) && "bg-pink-400 "
               }`}
             >
-              <div title={link.name} className=" text-3xl text-yellow-300">
+              <div title={link.name} className=" text-5xl text-yellow-300">
                 {link.icon}
               </div>
               <AnimatePresence>
@@ -117,7 +125,7 @@ function Sidebar() {
                     initial="show"
                     aniamte="show"
                     exit="hidden"
-                    className="whitespace-nowrap text-xl"
+                    className="whitespace-nowrap text-text-2xl"
                   >
                     {link.name}
                   </motion.div>
@@ -126,6 +134,7 @@ function Sidebar() {
             </NavLink>
           );
         })}
+        <div></div>
       </section>
 
       <div className="flex gap-5 flex-col text-xl"></div>

@@ -11,7 +11,7 @@ const cabSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    modelNumber: {
+     modelNumber: {
         type: String,
         required: true
     },

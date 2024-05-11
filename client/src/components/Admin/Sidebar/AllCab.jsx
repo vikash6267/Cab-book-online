@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { IconTrash } from "@tabler/icons-react";
 
 function AllCab() {
   const [cabs, setCabs] = useState([]);
@@ -8,9 +9,10 @@ function AllCab() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8080/api/v1/admin/get"
+          "https://cab-book-online.onrender.com/api/v1/admin/get"
         );
-        setCabs(response.data); // Assuming the data returned is an array of cab objects
+        console.log(response.data.cabs);
+        setCabs(response.data.cabs);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -19,26 +21,86 @@ function AllCab() {
     fetchData();
   }, []);
 
+  const handleDelete = async (id) => {
+    try {
+      await axios.delete(`https://cab-book-online.onrender.com/api/v1/admin/delete/${id}`);
+      setCabs(cabs.filter((cab) => cab._id !== id));
+      console.log("Cab deleted successfully.");
+    } catch (error) {
+      console.error("Error deleting cab:", error);
+    }
+  };
+
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-4">
-      {cabs.map((cab, index) => (
-        <div key={index} className="bg-white shadow-md rounded-md p-4">
-          <h2 className="text-lg font-semibold mb-2">{cab.vName}</h2>
-          <p className="text-gray-600 mb-2">Price: {cab.price}</p>
-          <p className="text-gray-600 mb-2">Model Number: {cab.modelNumber}</p>
-          <p className="text-gray-600 mb-2">Year: {cab.year}</p>
-          <p className="text-gray-600 mb-2">Doors: {cab.doors}</p>
-          <p className="text-gray-600 mb-2">Air: {cab.air}</p>
-          <p className="text-gray-600 mb-2">Transmission: {cab.transmission}</p>
-          <p className="text-gray-600 mb-2">Fuel: {cab.fuel}</p>
-          <p className="text-gray-600 mb-2">Seats: {cab.seats}</p>
-          <img
-            src={cab.image}
-            alt="Cab Thumbnail"
-            className="w-full rounded-md"
-          />
-        </div>
-      ))}
+    <div className="overflow-x-auto">
+      <table className="min-w-full divide-y divide-gray-200">
+        <thead className="bg-gray-50">
+          <tr>
+            <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              Image
+            </th>
+            <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              Name
+            </th>
+            <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              Price
+            </th>
+            <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              Model Number
+            </th>
+            <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              Year
+            </th>
+            <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              Doors
+            </th>
+            <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              Air
+            </th>
+            <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              Transmission
+            </th>
+            <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              Fuel
+            </th>
+            <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              Seats
+            </th>
+            <th scope="col" className="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
+              Actions
+            </th>
+          </tr>
+        </thead>
+        <tbody className="bg-white divide-y divide-gray-200">
+          {cabs?.map((cab, index) => (
+            <tr key={index}>
+              <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                <img
+                  src={cab.image}
+                  alt="Cab Thumbnail"
+                  className="w-16 h-16 object-cover rounded-full"
+                />
+              </td>
+              <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{cab.Name}</td>
+              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{cab.price}</td>
+              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{cab.modelNumber}</td>
+              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{cab.year}</td>
+              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{cab.doors}</td>
+              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{cab.air}</td>
+              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{cab.transmission}</td>
+              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{cab.fuel}</td>
+              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{cab.seats}</td>
+              <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                <IconTrash
+                  className="text-red-500 cursor-pointer"
+                  size={20}
+                  onClick={() => handleDelete(cab._id)}
+                />
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 }
