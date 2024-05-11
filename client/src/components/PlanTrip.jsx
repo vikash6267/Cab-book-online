@@ -15,16 +15,16 @@ function PlanTrip() {
 
             <div className="plan-container__boxes">
               <div className="plan-container__boxes__box">
-                <img src={SelectCar} alt="icon_img" />
+                <img src={SelectCar} alt="icon_img" className="flag-img" />
                 <h3>Select Car</h3>
-                <p>
+                <p className="text-white">
                   We offers a big range of vehicles for all your driving needs.
                   We have the perfect car to meet your needs
                 </p>
               </div>
 
               <div className="plan-container__boxes__box">
-                <img src={Contact} alt="icon_img" />
+                <img src={Contact} alt="icon_img" className="flag-img"/>
                 <h3>Contact Operator</h3>
                 <p>
                   Our knowledgeable and friendly operators are always ready to
@@ -33,7 +33,7 @@ function PlanTrip() {
               </div>
 
               <div className="plan-container__boxes__box">
-                <img src={Drive} alt="icon_img" />
+                <img src={Drive} alt="icon_img" className="flag-img" />
                 <h3>Let's Drive</h3>
                 <p>
                   Whether you're hitting the open road, we've got you covered

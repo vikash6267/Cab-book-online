@@ -231,7 +231,10 @@ body {
 .hero-section {
   width: 100%;
   height: 97vh;
-  background-color: #f8f8f8;
+  background-color: #fffb02;
+  
+  /* background-color: #1807afe0; */
+
   position: relative;
 }
 
@@ -407,7 +410,7 @@ body {
 }
 
 .book-content__box {
-  background-color: #ffffff;
+  /* background-color: #d7da4b80; */
   width: 100%;
   padding: 4rem 4.5rem 5rem 5.5rem;
   box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1);
@@ -424,6 +427,10 @@ body {
   flex-direction: column;
   color: #010103;
 }
+
+
+
+
 
 @media (max-width: 400px) {
   .book-content__box {
@@ -898,10 +905,21 @@ font-size: 1.3rem;
 }
 
 .plan-section {
-  background-color: #ffffff;
+  background: linear-gradient(135deg, #dbd976, #1a5bbc);
   padding: 5.3rem 0;
 }
+.flag-img {
+  animation: flag-waving 0.3s infinite alternate; /* Flag animation */
+}
 
+@keyframes flag-waving {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(10deg); /* Adjust the rotation angle as needed */
+  }
+}
 .plan-container {
   display: flex;
   flex-direction: column;
@@ -974,13 +992,15 @@ font-size: 1.3rem;
 .plan-container__boxes__box p {
   font-size: 1.6rem;
   font-family: "Rubik", sans-serif;
-  color: #706f7b;
+  color: #e6e1e1;
   line-height: 1.43;
 }
 
 .pick-section {
   padding: 10rem 0;
+  background-image: url("../images/plan/main.jpg");
 }
+
 
 .pick-container {
   display: flex;
@@ -1185,7 +1205,8 @@ font-size: 1.3rem;
   width: 100%;
   height: auto;
   display: flex;
-  background-color: #2d2d2d;
+  background-color: #a31212;
+  background-image: url("../images/plan/hello.jpg");
   margin: 8rem 0;
   padding: 6rem 0;
   text-align: center;

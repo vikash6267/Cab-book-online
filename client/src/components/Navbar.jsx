@@ -36,7 +36,7 @@ function Navbar() {
             </li>
             <li>
               <Link onClick={openNav} to="/models">
-                Models
+              Vehicle Models
               </Link>
             </li>
             {/* <li>

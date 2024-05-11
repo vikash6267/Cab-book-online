@@ -6,8 +6,7 @@ import { IconUser } from "@tabler/icons-react";
 import { IconPhone } from "@tabler/icons-react";
 import axios from "axios";
 import Swal from "sweetalert2";
-import { CAR_DATA } from "./CarData";
-import { distance } from "framer-motion";
+
 
 function BookCar() {
   // booking car
@@ -67,13 +66,23 @@ function BookCar() {
     setDropTime(e.target.value);
   };
 
-  // based on value name show car img
+  const [cabs, setCabs] = useState([]);
 
-  // hide message
-  const hideMessage = () => {
-    const doneMsg = document.querySelector(".booking-done");
-    doneMsg.style.display = "none";
-  };
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          "https://cab-book-online.onrender.com/api/v1/admin/get"
+        );
+        console.log(response.data.cabs);
+        setCabs(response.data.cabs);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   const calculateDistance = () => {
     const origin = fromValue;
@@ -229,8 +238,8 @@ function BookCar() {
                   <select value={carType} onChange={handleCar}>
                     <option>Select your car type</option>
                     {
-                      CAR_DATA.map((car,ind)=>(
-                        <option key={ind} value={car.name}>{car.name}</option>
+                      cabs.map((car,ind)=>(
+                        <option key={ind} value={car.vName}>{car.vName}</option>
                       ))
                     }
                   </select>
@@ -329,6 +338,7 @@ function BookCar() {
             </div>
           </div>
         </div>
+    
       </section>
 
       {/* modal ------------------------------------ */}
