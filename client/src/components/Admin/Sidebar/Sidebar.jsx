@@ -18,8 +18,8 @@ function Sidebar() {
     },
     {
       id: 2,
-      name: "Dashboard",
-      path: "/admin/dashboard",
+      name: "All Cabs",
+      path: "/admin/all-cab",
       icon: <AiOutlineDashboard />,
     },
     {

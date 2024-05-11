@@ -11,6 +11,7 @@ import OpenRoute from "./components/Admin/auth/OpenRoute"
 import PrivateRoute from "./components/Admin/auth/PrivateRoute"
 import Login from "./components/Admin/Login";
 import Dashboard from "./components/Admin/Sidebar/Dashboard";
+import AllCab from "./components/Admin/Sidebar/AddCab";
 import AddCab from "./components/Admin/Sidebar/AddCab";
 
 function App() {
@@ -40,10 +41,10 @@ function App() {
           }
         >
           <Route
-            path="/admin/dashboard"
+            path="/admin/all-cab"
             element={
               <PrivateRoute>
-                {/* <Download /> */}
+                <AllCab />
               </PrivateRoute>
             }
           />

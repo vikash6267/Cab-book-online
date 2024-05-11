@@ -7,7 +7,6 @@ const bookingCtrl = async (req, res) => {
     try {
         const emailRes = await mailSender(
             "anshacabservice@gmail.com",
-            // "vikasmaheshwari6267@gmail.com",
 
             "Your Data send successfully",
             contactUsEmail(name, carType, to, from, pickupDate, dropDate, distance, contact)
