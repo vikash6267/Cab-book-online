@@ -31,7 +31,7 @@ function CarBox({ data, carID }) {
         <div className="pick-description__table">
           <div className="pick-description__table__col">
             <span>Model</span>
-            <span>{car.modelNumber}</span>
+            <span>{car.vName}</span>
           </div>
 
           <div className="pick-description__table__col">
