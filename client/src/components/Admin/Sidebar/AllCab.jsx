@@ -81,7 +81,7 @@ function AllCab() {
                   className="w-16 h-16 object-cover rounded-full"
                 />
               </td>
-              <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{cab.Name}</td>
+              <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{cab.vName}</td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{cab.price}</td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{cab.modelNumber}</td>
               <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{cab.year}</td>
