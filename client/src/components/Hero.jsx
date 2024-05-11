@@ -72,7 +72,7 @@ function Hero() {
         {/* page up */}
         <div
           onClick={scrollToTop}
-          className={`scroll-up ${goUp ? "show-scroll" : ""}`}
+          className={`scroll-up ${goUp ? "" : ""}`}
         >
           ^
         </div>

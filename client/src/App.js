@@ -13,6 +13,8 @@ import Login from "./components/Admin/Login";
 import Dashboard from "./components/Admin/Sidebar/Dashboard";
 import AllCab from "./components/Admin/Sidebar/AddCab";
 import AddCab from "./components/Admin/Sidebar/AddCab";
+import Whatsapp from "./components/Whatsapp";
+import Call from "./components/Call";
 
 function App() {
   return (
@@ -85,6 +87,17 @@ function App() {
           /> */}
         </Route>
       </Routes>
+
+      <div className="fixed bottom-20 md:right-10 right-10 z-50">
+    <Whatsapp />
+
+      </div>
+
+
+      <div className="fixed bottom-44 md:right-10 right-10 z-50">
+    <Call />
+
+      </div>
     </>
   );
 }
