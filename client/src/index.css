@@ -1,0 +1,12 @@
+.fleet {
+  color: #ff4d30;
+  font-weight: bold;
+}
+.table-bg {
+  background-color: #ff4d30;
+  color: white;
+  font-size: 20px;
+}
+.loading {
+  background-color: #f6f6f6;
+}
