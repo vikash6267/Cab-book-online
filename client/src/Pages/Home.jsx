@@ -25,6 +25,7 @@ function Home({ cabs }) {
       <PickCar cabs={cabs} />
       <FaresTable />
       <ChooseUs />
+
       {/* <Testimonials /> */}
       <Faq />
       {/* <Download /> */}

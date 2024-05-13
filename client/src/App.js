@@ -15,6 +15,7 @@ import AddCab from "./components/Admin/Sidebar/AddCab";
 import Whatsapp from "./components/Whatsapp";
 import Call from "./components/Call";
 import Loading from "./components/Loading";
+import Privacy from "./Pages/Privacy";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -56,6 +57,7 @@ function App() {
             <Route path="about" element={<About />} />
             <Route path="contact" element={<Contact />} />
             <Route path="/models" element={<Models />} />
+            <Route path="/privacy-policy" element={<Privacy />} />
             <Route
               path="/admin/login"
               element={

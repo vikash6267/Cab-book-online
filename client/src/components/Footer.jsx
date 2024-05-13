@@ -1,4 +1,5 @@
 import { IconMail, IconPhoneCall } from "@tabler/icons-react";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -25,12 +26,11 @@ function Footer() {
                   href="mailto:anshacabservice@gmail.com"
                   className=" flex gap-4 "
                 >
-                  <IconMail /> 
-                  anshacabservice@gmail.com
-                  &nbsp;  
+                  <IconMail />
+                  anshacabservice@gmail.com &nbsp;
                 </a>
               </li>
-{/* 
+              {/* 
               <li>
                 <a
                   style={{ fontSize: "14px" }}
@@ -54,8 +54,11 @@ function Footer() {
               <li>
                 <a href="/contact">Contact</a>
               </li>
-                <li>
+              <li>
                 <a href="/admin/login">Admin Protected</a>
+              </li>
+              <li>
+                <Link to="/privacy-policy">Privacy Policy</Link>
               </li>
             </ul>
 
@@ -66,8 +69,6 @@ function Footer() {
               <li>Sat: 9:00AM - 19:00PM</li>
               <li>Sun: Closed</li> */}
             </ul>
-
-      
           </div>
         </div>
       </footer>
