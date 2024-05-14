@@ -10,21 +10,22 @@ import Download from "../components/Download";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { useEffect } from "react";
-import AnshCabService from "../components/CabSerive";
+import PickCarCopy from "../components/PickCarCopy";
+import FaresTable from "../components/FaresTable";
 
-
-function Home({cabs}) {
-  
- 
+function Home({ cabs }) {
   return (
     <>
       <Navbar />
       <Hero />
       <BookCar />
       <PlanTrip />
-      <PickCar cabs={cabs} />
+      <PickCarCopy cabs={cabs} />
       <Banner />
+      <PickCar cabs={cabs} />
+      <FaresTable />
       <ChooseUs />
+
       {/* <Testimonials /> */}
       <Faq />
       {/* <Download /> */}

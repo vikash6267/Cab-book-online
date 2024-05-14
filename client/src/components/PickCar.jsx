@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
 import CarBox from "./CarBox";
-import { CAR_DATA } from "./CarData";
 import axios from "axios";
 
 function PickCar() {
-  const [activeCarIndex, setActiveCarIndex] = useState(0); // Default active car index
-  const [colorBtn, setColorBtn] = useState(""); // State to manage button color
+  const [activeCarIndex, setActiveCarIndex] = useState(0);
+  const [colorBtn, setColorBtn] = useState("");
 
   const btnID = (id) => {
     setColorBtn(colorBtn === id ? "" : id);
@@ -21,7 +20,6 @@ function PickCar() {
   };
   const [cabs, setCabs] = useState([]);
 
-  
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -37,7 +35,6 @@ function PickCar() {
 
     fetchData();
   }, []);
-
 
   return (
     <>
