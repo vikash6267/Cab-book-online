@@ -1,5 +1,6 @@
 import { IconMail, IconPhoneCall } from "@tabler/icons-react";
 import { Link } from "react-router-dom";
+import { FaLocationDot } from "react-icons/fa6";
 
 function Footer() {
   return (
@@ -22,12 +23,17 @@ function Footer() {
               </li>
 
               <li>
-                <a
-                  href="mailto:anshacabservice@gmail.com"
-                  className=" flex gap-4 "
-                >
+                <a className=" flex gap-4 ">
                   <IconMail />
                   anshacabservice@gmail.com &nbsp;
+                </a>
+              </li>
+              <li>
+                <a className=" flex gap-4 ">
+                  <FaLocationDot size={20} />
+                  <span className="text-xl font-bold">
+                    77 Shakti vihar face 1 Maajre near by onix hotel
+                  </span>
                 </a>
               </li>
               {/* 
