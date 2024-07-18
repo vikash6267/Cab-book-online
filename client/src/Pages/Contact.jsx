@@ -91,8 +91,8 @@ function Contact() {
               <a href="tel:+919993186451" className="flex">
                 <IconPhone /> &nbsp; 9993186451
               </a>
-              <a href="mailto:anshacabservice@gmail.com" className="flex">
-                <IconMail /> &nbsp; anshacabservice@gmail.com
+              <a href="mailto:singhsonu21887@gmail.com" className="flex">
+                <IconMail /> &nbsp; singhsonu21887@gmail.com
               </a>
               <p className="flex">
                 <IconLocation />
