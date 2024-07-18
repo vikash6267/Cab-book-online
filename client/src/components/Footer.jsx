@@ -10,7 +10,7 @@ function Footer() {
           <div className="footer-content">
             <ul className="footer-content__1">
               <li>
-                <span>Ansh</span> Cab Service
+                <span>Raghuveer</span> Travel Service
               </li>
               <li>
                 We offers a big range of vehicles for all your driving needs. We
@@ -18,21 +18,22 @@ function Footer() {
               </li>
               <li>
                 <a href="tel:917351183413" className=" flex ">
-                  <IconPhoneCall /> &nbsp; +917351183413
+                  <IconPhoneCall /> &nbsp; 9993186451
                 </a>
               </li>
 
               <li>
                 <a className=" flex gap-4 ">
                   <IconMail />
-                  anshacabservice@gmail.com &nbsp;
+                  singhsonu21887@gmail.com &nbsp;
                 </a>
               </li>
               <li>
                 <a className=" flex gap-4 ">
                   <FaLocationDot size={20} />
                   <span className="text-xl font-bold">
-                    77 Shakti vihar face 1 Maajre near by onix hotel
+                    71, Chhatrasal Nagar Phase-2, phase 3, Ayodhya Nagar,
+                    Bhopal, Madhya Pradesh 462041
                   </span>
                 </a>
               </li>
@@ -52,7 +53,7 @@ function Footer() {
             <ul className="footer-content__2">
               <li className=" text-orange-400">Company</li>
               <li>
-                <a href="#home">Dehradun Utrakhand </a>
+                <a href="#home">Bhopal </a>
               </li>
               <li>
                 <a href="/about">About</a>

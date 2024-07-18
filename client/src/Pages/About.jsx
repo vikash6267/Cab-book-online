@@ -24,15 +24,18 @@ function About() {
             />
             <div className="about-main__text">
               <h3>About Company</h3>
-              <h2>You start the engine and your adventure begins</h2>
+              <h2>
+                You start the engine and your adventure begins with Raghuveer
+                Travels
+              </h2>
               <p>
-                Our cab booking web app offers a diverse range of vehicles,
-                including the compact Swift Dzire sedan, spacious Ertiga SUV,
-                sturdy Innova SUV, luxurious Innova Crysta SUV, and versatile
-                Tempo Traveller in various seating capacities. Whether it's a
-                solo trip or a group excursion, we've got the perfect ride for
-                every occasion, ensuring comfort and convenience
-                throughout your journey.
+                Our cab booking web app, Raghuveer Travels, offers a diverse
+                range of vehicles, including the compact Swift Dzire sedan,
+                spacious Ertiga SUV, sturdy Innova SUV, luxurious Innova Crysta
+                SUV, and versatile Tempo Traveller in various seating
+                capacities. Whether it's a solo trip or a group excursion, we've
+                got the perfect ride for every occasion, ensuring comfort and
+                convenience throughout your journey.
               </p>
               <div className="about-main__text__icons">
                 <div className="about-main__text__icons__box">
@@ -59,7 +62,7 @@ function About() {
               </div>
             </div>
           </div>
-      <AnshCabService />
+          <AnshCabService />
 
           <PlanTrip />
         </div>
@@ -71,7 +74,7 @@ function About() {
             <h2>Book a car by getting in touch with us</h2>
             <span>
               <IconPhone width={40} height={40} />
-              <h3>+9173511 83413</h3>
+              <h3>9993186451</h3>
             </span>
           </div>
         </div>

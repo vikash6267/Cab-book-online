@@ -15,9 +15,9 @@ function Navbar() {
       <nav>
         {/* mobile */}
         <div className={`mobile-navbar ${nav ? "open-nav" : ""}`}>
-        <div className=" absolute top-9  w-[290px] left-4">
+          <div className=" absolute top-9  w-[100px] left-4">
             <Link to="/" onClick={() => window.scrollTo(0, 0)}>
-              <img src={Logo} alt="logo-img" />
+              <img src={Logo} alt="logo-img" className="rounded-md " />
             </Link>
           </div>
           <div onClick={openNav} className="mobile-navbar__close">
@@ -58,7 +58,11 @@ function Navbar() {
         <div className="navbar">
           <div className="navbar__img">
             <Link to="/" onClick={() => window.scrollTo(0, 0)}>
-              <img src={Logo} alt="logo-img" />
+              <img
+                src={Logo}
+                alt="logo-img"
+                className="rounded-md lg:min-w-[150px] lg:min-h-[120px] min-w-[90px] min-h-[90px] "
+              />
             </Link>
           </div>
           <ul className="navbar__links">

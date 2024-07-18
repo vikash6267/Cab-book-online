@@ -5,7 +5,7 @@ function Banner() {
         <div className="container">
           <div className="banner-content">
             <div className="banner-content__text">
-              <h2>Save big with our cheap Ansh Cab Setvice!</h2>
+              <h2>Save big with our cheap Raghuveer Traverls Setvice!</h2>
               <p>
                 Top Airports. Local Suppliers. <span>24/7</span> Support.
               </p>

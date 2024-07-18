@@ -11,7 +11,6 @@ import { useEffect, useState } from "react";
 function Models() {
   const [cabs, setCabs] = useState([]);
 
-  
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -49,7 +48,11 @@ function Models() {
                         </span> */}
                       </div>
                       <div className="models-div__box__descr__name-price__price">
-                        <h4 className="flex items-center gap-1">   <IconCurrencyRupee className="text-3xl" />  {car.price ? `${car.price}` : "Contact for Price"}</h4>
+                        <h4 className="flex items-center gap-1">
+                          {" "}
+                          <IconCurrencyRupee className="text-3xl" />{" "}
+                          {car.price ? `${car.price}` : "Contact for Price"}
+                        </h4>
                         <p>per KM</p>
                       </div>
                     </div>
@@ -85,7 +88,7 @@ function Models() {
               <h2>Book a car by getting in touch with us</h2>
               <span>
                 <IconPhone width={40} height={40} />
-                <h3>+91 073511 83413</h3>
+                <h3>+91 9993186451</h3>
               </span>
             </div>
           </div>

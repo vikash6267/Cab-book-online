@@ -70,36 +70,45 @@ function Contact() {
       <section className="contact-page ">
         <HeroPages name="Contact" />
         <div className="container">
+          <br />
+          <div>
+            <iframe
+              className="w-full h-[60vh]"
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14660.96891009766!2d77.4635353!3d23.2706466!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c437aef2d76f5%3A0xfe4284816c098c87!2sRaghuveer%20Travels!5e0!3m2!1sen!2sin!4v1721284940779!5m2!1sen!2sin"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
           <div className="contact-div">
             <div className="contact-div__text flex col">
-              <h2>Need additional information?</h2>
+              <h2>Need additional information About Raghuveer Travels ?</h2>
               <p>
-                A multifaceted professional skilled in multiple fields of
-                research, development, as well as a learning specialist. Over 15
-                years of experience.
+                A multifaceted professional, Raghuveer Travels, skilled in
+                multiple fields of research, development, as well as a learning
+                specialist. Over 8 years of experience.
               </p>
-              <a href="tel:+91073511 83413" className="flex">
-                <IconPhone /> &nbsp; 073511 83413
-
+              <a href="tel:+919993186451" className="flex">
+                <IconPhone /> &nbsp; 9993186451
               </a>
               <a href="mailto:anshacabservice@gmail.com" className="flex">
                 <IconMail /> &nbsp; anshacabservice@gmail.com
               </a>
-              <p className="flex"> 
+              <p className="flex">
                 <IconLocation />
-                &nbsp; Dehradun Utrakhand
+                &nbsp; Bhopal
               </p>
             </div>
             {/* <div className="contact-div__form">
               <a href="/" className="flex">
-                <IconPhone /> &nbsp; +9173511 83413
+                <IconPhone /> &nbsp; 9993186451
               </a>
               <a href="/" className="flex">
                 <IconMail /> &nbsp; anshacabservice@gmail.com
               </a>
               <a href="/" className="flex">
                 <IconLocation />
-                &nbsp; Dehradun, Utrakhand
+                &nbsp; Dehradun, 
               </a>
             </div> */}
             <div className="contact-div__form ">
@@ -144,6 +153,7 @@ function Contact() {
             </div>
           </div>
         </div>
+
         <div className="book-banner">
           <div className="book-banner__overlay"></div>
           <div className="container">
@@ -151,7 +161,7 @@ function Contact() {
               <h2>Book a car by getting in touch with us</h2>
               <span>
                 <IconPhone width={40} height={40} />
-                <h3>+91 73511 83413</h3>
+                <h3>+91 9993186451</h3>
               </span>
             </div>
           </div>

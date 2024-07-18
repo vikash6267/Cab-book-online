@@ -57,7 +57,8 @@ const Privacy = () => {
           <li>
             <p>
               <strong>Company</strong> (referred to as either "the Company",
-              "We", "Us" or "Our" in this Agreement) refers to Ansh Cab Service.
+              "We", "Us" or "Our" in this Agreement) refers to Raghuveer Traverl
+              Service.
             </p>
           </li>
           <li>
@@ -117,8 +118,8 @@ const Privacy = () => {
           </li>
           <li>
             <p>
-              <strong>Website</strong> refers to Ansh Cab Service, accessible
-              from
+              <strong>Website</strong> refers to Raghuveer Traverl Service,
+              accessible from
             </p>
           </li>
           <li>
